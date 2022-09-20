@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucleo_regional_educacao/pages/first_page.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_avisos/apucarana_avisos.dart';
+import 'package:nucleo_regional_educacao/pages/municipios_pages/apucarana.dart';
 import 'package:nucleo_regional_educacao/pages/second_page.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => FirstScreen(),
-        '/apucarana': (context) => const SecondScreen(),
+        '/apucarana': (context) => const Apucarana(),
         '/apucarana/apucarana_avisos': (context) => Apucarana_avisos(),
       },
     );
