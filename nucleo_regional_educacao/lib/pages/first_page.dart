@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_dropdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:advance_pdf_viewer_fork/advance_pdf_viewer_fork.dart';
+import 'package:web_scraper/web_scraper.dart';
 
 //import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
@@ -18,85 +19,106 @@ class FirstScreen extends StatefulWidget {
 
 class _FirstScreenState extends State<FirstScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final List<Widget> _painters = <Widget>[];
   late FutureOr<Uint8List> content;
   @override
   void initState() {
     super.initState();
-    _painters.add(SvgPicture.asset('assets/images/mapa_parana.svg'));
   }
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: MediaQuery.of(context).size.width * 0.20,
-                  width: MediaQuery.of(context).size.width * 1,
-                  child: Row(
-                    children: [
-                      IconButton(
-                        icon: const Icon(
-                          Icons.menu,
-                          color: Colors.black,
-                        ),
-                        onPressed: () {
-                          _scaffoldKey.currentState?.openDrawer();
-                        },
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 10,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    IconButton(
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.black,
                       ),
-                      Container(
-                        height: MediaQuery.of(context).size.height * 0.1,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage('assets/images/logo_parana.png'),
+                      onPressed: () {
+                        _scaffoldKey.currentState?.openDrawer();
+                      },
+                    ),
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.contain,
+                              image:
+                                  AssetImage('assets/images/logo_parana.png'),
+                            ),
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: AvisosNreDropdown(),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.65,
-                width: MediaQuery.of(context).size.width * 1,
-                color: Colors.grey[200],
-                child: Center(
-                  child: Column(
-                    children: [
-                      const Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text("PARANÁ"),
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: GridView.extent(
-                          shrinkWrap: true,
-                          maxCrossAxisExtent:
-                              MediaQuery.of(context).size.width * 1,
-                          children: _painters.toList(),
+              Padding(
+                padding: const EdgeInsets.only(top: 120.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: AvisosNreDropdown(),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      color: Colors.grey[200],
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text("$size"),
+                            ),
+                            Center(
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.45,
+                                width: MediaQuery.of(context).size.width * 1,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.contain,
+                                    image: AssetImage(
+                                        'assets/images/mapa_parana.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    const Divider(),
+                  ],
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/second');
-                },
-                child: const Text('Launch screen'),
+              Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      bottom: 10,
+                      child: Text("Ultimas Notícias"),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -129,9 +151,15 @@ class _FirstScreenState extends State<FirstScreen> {
               ListTile(
                 title: const Text('Calendário Escolar'),
                 onTap: () async {
-                  PDFDocument doc = await PDFDocument.fromAsset(
-                      'assets/images/CALENDARIO_2022.pdf');
-                  PDFPage? pageOne = await doc.get();
+                  try {
+                    await launchUrl(
+                      Uri.parse(
+                          'https://www.educacao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2021-11/CALENDARIO_2022.pdf'),
+                      mode: LaunchMode.externalApplication,
+                    );
+                  } catch (err) {
+                    debugPrint('Something went wrong');
+                  }
                 },
               ),
               ListTile(
@@ -145,7 +173,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 title: const Text('Expresso e-mail'),
                 onTap: () {
                   launchUrl(Uri.parse(
-                      "https://www.diaadiaeducacao.pr.gov.br/portals/frm_login.php?acesso=1&origem=email"));
+                      "http://www.diaadiaeducacao.pr.gov.br/portals/frm_login.php?acesso=1&origem=email"));
                 },
               ),
               ListTile(
@@ -160,4 +188,6 @@ class _FirstScreenState extends State<FirstScreen> {
       ),
     );
   }
+
+  void printinfo() {}
 }

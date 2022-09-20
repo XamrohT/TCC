@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nucleo_regional_educacao/pages/first_page.dart';
+import 'package:nucleo_regional_educacao/pages/municipios_avisos/apucarana_avisos.dart';
 import 'package:nucleo_regional_educacao/pages/second_page.dart';
 
 void main() {
@@ -12,11 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Named Routes Demo',
+      title: 'Nucleo Regional de Educação',
       initialRoute: '/',
       routes: {
         '/': (context) => FirstScreen(),
-        '/second': (context) => const SecondScreen(),
+        '/apucarana': (context) => const SecondScreen(),
+        '/apucarana/apucarana_avisos': (context) => Apucarana_avisos(),
       },
     );
   }

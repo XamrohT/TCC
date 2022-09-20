@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:web_scraper/web_scraper.dart';
 
 class AvisosNreDropdown extends StatefulWidget {
   const AvisosNreDropdown({Key? key}) : super(key: key);
@@ -29,12 +30,12 @@ class _AvisosNreDropdownState extends State<AvisosNreDropdown> {
           DropdownButtonFormField<String>(
             style: const TextStyle(),
             value: dropdownValue,
-            onChanged: (String? value) {
+            onChanged: (String? value) async {
               setState(() {
                 dropdownValue = value!;
               });
               if (value == 'Apucarana') {
-                launchUrl(_url);
+                Navigator.pushNamed(context, '/apucarana');
               }
             },
             items: <String>[

@@ -52,6 +52,7 @@ dev_dependencies:
   url_launcher: 6.1.1
   path_provider: ^2.0.11
   advance_pdf_viewer_fork: ^2.0.0
+  web_scraper: ^0.1.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -69,8 +70,11 @@ flutter:
     - assets/images/
     - assets/images/logo_parana.png
     - assets/images/bandeira.png
-    - assets/images/mapa_parana.svg
+    - assets/images/mapa_parana.png
     - assets/images/CALENDARIO_2022.pdf
+    - assets/images/mapa_parana.svg
+    - assets/images/apucarana_fachada.jpg
+    - assets/images/mapa_nre_apucarana.jpg
 
   #   - images/a_dot_ham.jpeg
 
