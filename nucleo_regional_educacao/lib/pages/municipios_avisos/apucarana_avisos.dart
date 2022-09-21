@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nucleo_regional_educacao/components/Drawer.dart';
+import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
 import 'package:nucleo_regional_educacao/components/card.dart';
 // ignore: depend_on_referenced_packages
 import 'package:url_launcher/url_launcher.dart';
@@ -21,19 +23,22 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
 
   void fetchProducts() async {
     final webScraper = WebScraper('https://www.nre.seed.pr.gov.br');
-    if (await webScraper.loadWebPage(
-        '/modules/qas/categoria.php?cod_categoria=3&nome_categoria=NRE%20Apucarana&ordenacao=titulo&tipo_ordem=ASC&filtroTitulo=&filtroDataIni=1488558000&filtroDataFim=1662993000')) {
-      search = webScraper.getElement(
-          'div.blockContent > table > tbody > tr > td > a', ['href']);
-      for (int i = 1; i <= search!.length - 1; i += 2) {
-        elementsTitle.add('${search![i]['title']}');
-        elementsLink.add('${search![i]['attributes']['href']}');
+    print('entrou aqui');
+    
+      if (await webScraper.loadWebPage(
+          '/modules/qas/categoria.php?cod_categoria=3')) {
+      print("falhou?");
+        search = webScraper.getElement(
+            'div.blockContent > table > tbody > tr > td > a', ['href']);
+        for (int i = 1; i <= search!.length - 1; i += 2) {
+          elementsTitle.add('${search![i]['title']}');
+          elementsLink.add('${search![i]['attributes']['href']}');
+        }
+        for (int i = 0; i <= search!.length; i += 2) {
+          elementsDate.add('${search![i]['title']}');
+        }
+        setState(() {});
       }
-      for (int i = 0; i <= search!.length; i += 2) {
-        elementsDate.add('${search![i]['title']}');
-      }
-      setState(() {});
-    }
   }
 
   @override
@@ -49,34 +54,65 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
         key: _scaffoldKey,
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.width * 0.20,
-                width: MediaQuery.of(context).size.width * 1,
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(
-                        Icons.menu,
-                        color: Colors.black,
-                      ),
-                      onPressed: () {
-                        _scaffoldKey.currentState?.openDrawer();
-                      },
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 10,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.menu,
+                      color: Colors.black,
                     ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage('assets/images/logo_parana.png'),
+                    onPressed: () {
+                      _scaffoldKey.currentState?.openDrawer();
+                    },
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height /4,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.contain,
+                            image: AssetImage('assets/images/apucarana_fachada.jpg'),
+                          ),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(4, 24, 0, 8),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadiusGeometry.lerp(
+                        BorderRadius.circular(10),
+                        BorderRadius.circular(10),
+                        5),
+                    border: Border.all(color: Colors.black)),
+                width: MediaQuery.of(context).size.width > 600
+                    ? MediaQuery.of(context).size.width * 0.7
+                    : MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 10.0,
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  AvisosNreComponent(
+                      label: "Institucional",
+                      onTapped: () => {Navigator.pop(context)},
+                      icon: Icons.account_balance ),
+                  AvisosNreComponent(
+                      label: "Avisos",
+                      onTapped: () => {print("Institucional")},
+                      icon: Icons.my_library_books ),
+                  AvisosNreComponent(
+                      label: "Noticias",
+                      onTapped: () => {print("Institucional")},
+                      icon: Icons.newspaper),
+                ]),
               ),
             ),
             SafeArea(
@@ -88,7 +124,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                   : Column(
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.8,
+                          height: MediaQuery.of(context).size.height * 0.60,
                           child: ListView.separated(
                             itemCount: 40,
                             itemBuilder: (BuildContext context, int index) {
@@ -109,66 +145,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
           ],
         ),
         drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              ListTile(
-                title: const Text('legislação'),
-                onTap: () {
-                  launchUrl(
-                      Uri.parse("https://www.educacao.pr.gov.br/Legislacao"));
-                },
-              ),
-              ListTile(
-                title: const Text('Site institucional Seed-PR'),
-                onTap: () {
-                  launchUrl(
-                      Uri.parse("https://www.educacao.pr.gov.br/desvio.html"));
-                },
-              ),
-              ListTile(
-                title: const Text('Transparência'),
-                onTap: () {
-                  launchUrl(Uri.parse(
-                      "http://www.transparencia.pr.gov.br/pte/informacoes/portalInstitucional/82/3"));
-                },
-              ),
-              ListTile(
-                title: const Text('Calendário Escolar'),
-                onTap: () async {
-                  try {
-                    await launchUrl(
-                      Uri.parse(
-                          'https://www.educacao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2021-11/CALENDARIO_2022.pdf'),
-                      mode: LaunchMode.externalApplication,
-                    );
-                  } catch (err) {
-                    debugPrint('Something went wrong');
-                  }
-                },
-              ),
-              ListTile(
-                title: const Text('Contracheque'),
-                onTap: () {
-                  launchUrl(Uri.parse(
-                      "http://wwws.portaldoservidor.pr.gov.br/cchequenet/"));
-                },
-              ),
-              ListTile(
-                title: const Text('Expresso e-mail'),
-                onTap: () {
-                  launchUrl(Uri.parse(
-                      "http://www.diaadiaeducacao.pr.gov.br/portals/frm_login.php?acesso=1&origem=email"));
-                },
-              ),
-              ListTile(
-                title: const Text('Site instituicional Seed-PR'),
-                onTap: () {
-                  launchUrl(Uri.parse("https://www.educacao.pr.gov.br/"));
-                },
-              ),
-            ],
-          ),
+          child: PersonalizedDrawer(),
         ),
       ),
     );
