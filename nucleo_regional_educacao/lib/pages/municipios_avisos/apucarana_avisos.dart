@@ -72,11 +72,11 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                   Expanded(
                     child: Center(
                       child: Container(
-                        height: MediaQuery.of(context).size.height /4,
+                        height: MediaQuery.of(context).size.height * 0.1,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.contain,
-                            image: AssetImage('assets/images/apucarana_fachada.jpg'),
+                            image: AssetImage('assets/images/logo_parana.png'),
                           ),
                         ),
                       ),
@@ -124,7 +124,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                   : Column(
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.60,
+                          height: MediaQuery.of(context).size.height * 0.70,
                           child: ListView.separated(
                             itemCount: 40,
                             itemBuilder: (BuildContext context, int index) {
