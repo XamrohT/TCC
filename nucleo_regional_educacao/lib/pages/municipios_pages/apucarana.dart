@@ -18,37 +18,43 @@ class Apucarana extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 10,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          IconButton(
-                            icon: const Icon(
-                              Icons.menu,
-                              color: Colors.black,
+                    Material(
+                      elevation: 4,
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height / 9,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Center(
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.menu,
+                                  color: Colors.black,
+                                ),
+                                onPressed: () {
+                                  _scaffoldKey.currentState?.openDrawer();
+                                },
+                              ),
                             ),
-                            onPressed: () {
-                              _scaffoldKey.currentState?.openDrawer();
-                            },
-                          ),
-                          Expanded(
-                            child: Center(
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.1,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.contain,
-                                    image: AssetImage(
-                                        'assets/images/logo_parana.png'),
+                            Expanded(
+                              child: Center(
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.1,
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.contain,
+                                      image: AssetImage(
+                                          'assets/images/logo_parana.png'),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     Padding(
@@ -60,7 +66,7 @@ class Apucarana extends StatelessWidget {
                             5),
                         elevation: 10,
                         child: Container(
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           width: MediaQuery.of(context).size.width > 600
                               ? MediaQuery.of(context).size.width * 0.5
                               : MediaQuery.of(context).size.width,
@@ -126,7 +132,7 @@ class Apucarana extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.place,
                                     color: Colors.red,
                                     size: 20.0,
@@ -138,7 +144,7 @@ class Apucarana extends StatelessWidget {
                                       launchUrl(Uri.parse(
                                           "https://www.google.com.br/maps/place/R.+Lapa,+250+-+Centro,+Apucarana+-+PR,+86800-310/@-23.5545826,-51.4770048,15z/data=!4m13!1m7!3m6!1s0x94ec9979787489cd:0x2207f18044757f11!2sR.+Lapa,+250+-+Centro,+Apucarana+-+PR,+86800-310!3b1!8m2!3d-23.5545826!4d-51.4682501!3m4!1s0x94ec9979787489cd:0x2207f18044757f11!8m2!3d-23.5545826!4d-51.4682501"));
                                     },
-                                    child: Text('Localização'),
+                                    child: const Text('Localização'),
                                   ),
                                 ],
                               ),
@@ -152,7 +158,7 @@ class Apucarana extends StatelessWidget {
                 Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.fromLTRB(8, 24, 8, 0),
+                      padding: const EdgeInsets.fromLTRB(8, 24, 8, 0),
                       child: Material(
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(40.0),
@@ -202,63 +208,313 @@ class Apucarana extends StatelessWidget {
                               ? MediaQuery.of(context).size.width * 0.5
                               : MediaQuery.of(context).size.width,
                           child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 24.0),
-                                  child: Row(
-                                    children: [
-                                      Text("INSTITUCIONAL"),
-                                    ],
-                                  ),
-                                ),
-                                Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 24.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Text(
-                                          "Este Núcleo Regional de Educação atende\n16 (dezesseis) municípios:"),
-                                    )
+                                    const Text("INSTITUCIONAL"),
                                   ],
                                 ),
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 12.0),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.only(top: 8.0),
                                       child: Text(
-                                          "Apucarana, Arapongas, Bom Sucesso, Borrazópolis,\nCalifórnia, Cambira, Cruzmaltina, Faxinal,\nJandaia do Sul, Kaloré, Marilândia do Sul, Marumbi,\nMauá da Serra, Novo Itacolomi, Rio Bom e Sabáudia."),
+                                          "Este Núcleo Regional de Educação atende 16 (dezesseis) municípios:"),
                                     ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(4.0, 20, 4, 0),
-                                  child: Center(
-                                    child: Container(
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              4,
-                                      width: MediaQuery.of(context).size.width,
-                                      decoration: const BoxDecoration(
-                                        image: DecorationImage(
-                                          fit: BoxFit.contain,
-                                          image: AssetImage(
-                                              'assets/images/apucarana_fachada.jpg'),
-                                        ),
+                                  )
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.only(top: 12.0),
+                                      child: Text(
+                                          "Apucarana, Arapongas, Bom Sucesso, Borrazópolis, Califórnia, Cambira, Cruzmaltina, Faxinal, Jandaia do Sul, Kaloré, Marilândia do Sul, Marumbi, Mauá da Serra, Novo Itacolomi, Rio Bom e Sabáudia."),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(4.0, 20, 4, 0),
+                                child: Center(
+                                  child: Container(
+                                    height:
+                                        MediaQuery.of(context).size.height / 4,
+                                    width: MediaQuery.of(context).size.width,
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.contain,
+                                        image: AssetImage(
+                                            'assets/images/apucarana_fachada.jpg'),
                                       ),
                                     ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 20.0),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 20.0),
+                                child: Container(
+                                  color: Colors.grey[300],
+                                  child: const Text(
+                                      "Horário de Funcionamento: segunda a sexta das 8h às 12h e das 13h às 18h"),
+                                ),
+                              ),
+                              const Divider(),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Material(
+                                  color: Colors.grey[200],
                                   child: Container(
-                                    color: Colors.grey[300],
-                                    child: Text(
-                                        "Horário de Funcionamento: segunda a sexta das 8h às 12h e das 13h às 18h"),
+                                    child: MediaQuery.of(context).size.width >
+                                            600
+                                        ? Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Column(
+                                                children: [
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        "Secretaria da Educação do Paraná"),
+                                                  ),
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                        "Av. Água Verde, 2140 - Vila Izabel"),
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      const Text(
+                                                          "80240-900 - Curitiba - PR -"),
+                                                      const Icon(
+                                                        Icons.place,
+                                                        color: Colors.red,
+                                                        size: 20.0,
+                                                        semanticLabel:
+                                                            'Shows Apucarana Localization',
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          launchUrl(Uri.parse(
+                                                              "https://www.google.com/maps/place/Av.+%C3%81gua+Verde,+2140+-+%C3%81gua+Verde,+Curitiba+-+PR,+80240-070/@-25.4538165,-49.2926591,17z/data=!3m1!4b1!4m5!3m4!1s0x94dce3836bfcf0a9:0xddf65733c4d6bdf5!8m2!3d-25.4538165!4d-49.2926591"));
+                                                        },
+                                                        child:
+                                                            const Text('Localização'),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text("41 3340-1500"),
+                                                  ),
+                                                ],
+                                              ),
+                                              const VerticalDivider(
+                                                color: Colors.black,
+                                                thickness: 3,
+                                                width: 20,
+                                              ),
+                                              Column(
+                                                children: [
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                          "instituto Paranaense de Desenvolvimento \nEducacional Fundepar"),
+                                                  ),
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                        "Av. Água Verde, 2140 - Vila Izabel"),
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      const Text(
+                                                          "80240-900 - Curitiba - PR -"),
+                                                      const Icon(
+                                                        Icons.place,
+                                                        color: Colors.red,
+                                                        size: 20.0,
+                                                        semanticLabel:
+                                                            'Shows Apucarana Localization',
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          launchUrl(Uri.parse(
+                                                              "https://www.google.com/maps?q=Rua+dos+Funcion%C3%A1rios,+1323+-+Cabral+80035-050+Curitiba+PR&hl=pt-BR&ie=UTF8&ll=-25.409342,-49.249048&spn=0.011358,0.021651&sll=-25.45403,-49.292382&sspn=0.011354,0.021651&z=16&iwloc=r1"));
+                                                        },
+                                                        child:
+                                                            const Text('Localização'),
+                                                      ),
+                                                      
+                                                    ],
+                                                  ),
+                                                  TextButton(
+                                                        onPressed: () {
+                                                          launchUrl(Uri.parse(
+                                                              "https://www.fundepar.pr.gov.br/Formulario/Contato"));
+                                                        },
+                                                        child:
+                                                            const Text('Telefones'),
+                                                      ),
+                                                ],
+                                              ),
+                                            ],
+                                          )
+                                        : Column(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                            children: [
+                                              Column(
+                                                children: [
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        "Secretaria da Educação do Paraná"),
+                                                  ),
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                        "Av. Água Verde, 2140 - Vila Izabel"),
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    children: [
+                                                      const Text(
+                                                          "80240-900 - Curitiba - PR -"),
+                                                      const Icon(
+                                                        Icons.place,
+                                                        color: Colors.red,
+                                                        size: 20.0,
+                                                        semanticLabel:
+                                                            'Shows Apucarana Localization',
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          launchUrl(Uri.parse(
+                                                              "https://www.google.com/maps/place/Av.+%C3%81gua+Verde,+2140+-+%C3%81gua+Verde,+Curitiba+-+PR,+80240-070/@-25.4538165,-49.2926591,17z/data=!3m1!4b1!4m5!3m4!1s0x94dce3836bfcf0a9:0xddf65733c4d6bdf5!8m2!3d-25.4538165!4d-49.2926591"));
+                                                        },
+                                                        child:
+                                                            const Text('Localização'),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text("41 3340-1500"),
+                                                  ),
+                                                ],
+                                              ),
+                                              const VerticalDivider(
+                                                color: Colors.black,
+                                                thickness: 3,
+                                                width: 20,
+                                              ),
+                                              const Divider(indent: 20,endIndent: 10,color:Colors.black),
+                                              Column(
+                                                children: [
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                          "instituto Paranaense de Desenvolvimento \n"),
+                                                  ),
+                                                  const Text(
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        "Educacional Fundepar"),
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsets.only(
+                                                            top: 12.0),
+                                                    child: Text(
+                                                        "Av. Água Verde, 2140 - Vila Izabel"),
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    children: [
+                                                      const Text(
+                                                          "80240-900 - Curitiba - PR -"),
+                                                      const Icon(
+                                                        Icons.place,
+                                                        color: Colors.red,
+                                                        size: 20.0,
+                                                        semanticLabel:
+                                                            'Shows Apucarana Localization',
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () {
+                                                          launchUrl(Uri.parse(
+                                                              "https://www.google.com/maps?q=Rua+dos+Funcion%C3%A1rios,+1323+-+Cabral+80035-050+Curitiba+PR&hl=pt-BR&ie=UTF8&ll=-25.409342,-49.249048&spn=0.011358,0.021651&sll=-25.45403,-49.292382&sspn=0.011354,0.021651&z=16&iwloc=r1"));
+                                                        },
+                                                        child:
+                                                            const Text('Localização'),
+                                                      ),
+                                                      
+                                                    ],
+                                                  ),
+                                                  TextButton(
+                                                        onPressed: () {
+                                                          launchUrl(Uri.parse(
+                                                              "https://www.fundepar.pr.gov.br/Formulario/Contato"));
+                                                        },
+                                                        child:
+                                                             const Text('Telefones'),
+                                                      ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                   ),
-                                )
-                              ]),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     )
@@ -268,7 +524,7 @@ class Apucarana extends StatelessWidget {
             ),
           ),
         ),
-        drawer: Drawer(child: PersonalizedDrawer()),
+        drawer: const Drawer(child: PersonalizedDrawer()),
       ),
     );
   }

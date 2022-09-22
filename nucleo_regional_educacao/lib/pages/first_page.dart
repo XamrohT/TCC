@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 //import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
 class FirstScreen extends StatefulWidget {
-  FirstScreen({super.key});
+  const FirstScreen({super.key});
 
   @override
   State<FirstScreen> createState() => _FirstScreenState();
@@ -81,7 +81,7 @@ class _FirstScreenState extends State<FirstScreen> {
                         child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Text("$size"),
                             ),
                             Center(
@@ -110,7 +110,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: Stack(
-                  children: [
+                  children: const [
                     Positioned(
                       bottom: 10,
                       child: Text("Ultimas Notícias"),
@@ -121,7 +121,7 @@ class _FirstScreenState extends State<FirstScreen> {
             ],
           ),
         ),
-        drawer: Drawer(child: PersonalizedDrawer()),
+        drawer: const Drawer(child: PersonalizedDrawer()),
       ),
     );
   }

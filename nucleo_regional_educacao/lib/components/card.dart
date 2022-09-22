@@ -6,15 +6,15 @@ class CardComponent extends StatefulWidget {
   late final String titulo;
   late final String link;
 
-  CardComponent({required this.data, required this.titulo, required this.link});
+  CardComponent({super.key, required this.data, required this.titulo, required this.link});
   @override
   _CardComponentState createState() => _CardComponentState();
 }
 
 class _CardComponentState extends State<CardComponent> {
-  final Color color = Color(0xff3b30);
-  Color secondColor = Color(0xffaeaeb2);
-  Color buttonColor = Color(0xff1590a6);
+  final Color color = const Color(0xff3b30);
+  Color secondColor = const Color(0xffaeaeb2);
+  Color buttonColor = const Color(0xff1590a6);
   @override
   void initState() {
     super.initState();
@@ -26,6 +26,10 @@ class _CardComponentState extends State<CardComponent> {
       child: GestureDetector(
         onTap: () => onClick(),
         child: Material(
+          borderRadius: BorderRadiusGeometry.lerp(
+                            BorderRadius.circular(10),
+                            BorderRadius.circular(10),
+                            5),
           elevation: 4,
           shadowColor: secondColor,
           color: Colors.white,
@@ -34,7 +38,7 @@ class _CardComponentState extends State<CardComponent> {
               widget.titulo,
               // ignore: prefer_const_constructors
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize:MediaQuery.of(context).size.height * 0.016,
               ),
             ),
             subtitle: Padding(
