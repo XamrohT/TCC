@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucleo_regional_educacao/components/Drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
+import 'package:nucleo_regional_educacao/components/custom_pop_up_menu.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Apucarana extends StatelessWidget {
@@ -51,6 +52,17 @@ class Apucarana extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+                            Center(
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.menu_open,
+                                  color: Colors.black,
+                                ),
+                                onPressed: () {
+                                  _scaffoldKey.currentState?.openEndDrawer();
+                                },
                               ),
                             ),
                           ],
@@ -229,7 +241,20 @@ class Apucarana extends StatelessWidget {
                                       child: Text(
                                           "Este Núcleo Regional de Educação atende 16 (dezesseis) municípios:"),
                                     ),
-                                  )
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.help,
+                                      color: Colors.black,
+                                    ),
+                                    onPressed: () {
+                                      showDialog(
+                                          builder: (BuildContext context) {
+                                            return const CustomPopUp();
+                                          },
+                                          context: context);
+                                    },
+                                  ),
                                 ],
                               ),
                               Row(
@@ -285,9 +310,8 @@ class Apucarana extends StatelessWidget {
                                               Column(
                                                 children: [
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
                                                         style: TextStyle(
                                                             fontWeight:
@@ -296,9 +320,8 @@ class Apucarana extends StatelessWidget {
                                                         "Secretaria da Educação do Paraná"),
                                                   ),
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
                                                         "Av. Água Verde, 2140 - Vila Izabel"),
                                                   ),
@@ -318,15 +341,14 @@ class Apucarana extends StatelessWidget {
                                                           launchUrl(Uri.parse(
                                                               "https://www.google.com/maps/place/Av.+%C3%81gua+Verde,+2140+-+%C3%81gua+Verde,+Curitiba+-+PR,+80240-070/@-25.4538165,-49.2926591,17z/data=!3m1!4b1!4m5!3m4!1s0x94dce3836bfcf0a9:0xddf65733c4d6bdf5!8m2!3d-25.4538165!4d-49.2926591"));
                                                         },
-                                                        child:
-                                                            const Text('Localização'),
+                                                        child: const Text(
+                                                            'Localização'),
                                                       ),
                                                     ],
                                                   ),
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text("41 3340-1500"),
                                                   ),
                                                 ],
@@ -339,20 +361,18 @@ class Apucarana extends StatelessWidget {
                                               Column(
                                                 children: [
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold),
-                                                          "instituto Paranaense de Desenvolvimento \nEducacional Fundepar"),
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                        "instituto Paranaense de Desenvolvimento \nEducacional Fundepar"),
                                                   ),
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
                                                         "Av. Água Verde, 2140 - Vila Izabel"),
                                                   ),
@@ -372,33 +392,32 @@ class Apucarana extends StatelessWidget {
                                                           launchUrl(Uri.parse(
                                                               "https://www.google.com/maps?q=Rua+dos+Funcion%C3%A1rios,+1323+-+Cabral+80035-050+Curitiba+PR&hl=pt-BR&ie=UTF8&ll=-25.409342,-49.249048&spn=0.011358,0.021651&sll=-25.45403,-49.292382&sspn=0.011354,0.021651&z=16&iwloc=r1"));
                                                         },
-                                                        child:
-                                                            const Text('Localização'),
+                                                        child: const Text(
+                                                            'Localização'),
                                                       ),
-                                                      
                                                     ],
                                                   ),
                                                   TextButton(
-                                                        onPressed: () {
-                                                          launchUrl(Uri.parse(
-                                                              "https://www.fundepar.pr.gov.br/Formulario/Contato"));
-                                                        },
-                                                        child:
-                                                            const Text('Telefones'),
-                                                      ),
+                                                    onPressed: () {
+                                                      launchUrl(Uri.parse(
+                                                          "https://www.fundepar.pr.gov.br/Formulario/Contato"));
+                                                    },
+                                                    child:
+                                                        const Text('Telefones'),
+                                                  ),
                                                 ],
                                               ),
                                             ],
                                           )
                                         : Column(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Column(
                                                 children: [
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
                                                         style: TextStyle(
                                                             fontWeight:
@@ -407,14 +426,15 @@ class Apucarana extends StatelessWidget {
                                                         "Secretaria da Educação do Paraná"),
                                                   ),
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
                                                         "Av. Água Verde, 2140 - Vila Izabel"),
                                                   ),
                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       const Text(
                                                           "80240-900 - Curitiba - PR -"),
@@ -430,15 +450,14 @@ class Apucarana extends StatelessWidget {
                                                           launchUrl(Uri.parse(
                                                               "https://www.google.com/maps/place/Av.+%C3%81gua+Verde,+2140+-+%C3%81gua+Verde,+Curitiba+-+PR,+80240-070/@-25.4538165,-49.2926591,17z/data=!3m1!4b1!4m5!3m4!1s0x94dce3836bfcf0a9:0xddf65733c4d6bdf5!8m2!3d-25.4538165!4d-49.2926591"));
                                                         },
-                                                        child:
-                                                            const Text('Localização'),
+                                                        child: const Text(
+                                                            'Localização'),
                                                       ),
                                                     ],
                                                   ),
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text("41 3340-1500"),
                                                   ),
                                                 ],
@@ -448,35 +467,37 @@ class Apucarana extends StatelessWidget {
                                                 thickness: 3,
                                                 width: 20,
                                               ),
-                                              const Divider(indent: 20,endIndent: 10,color:Colors.black),
+                                              const Divider(
+                                                  indent: 20,
+                                                  endIndent: 10,
+                                                  color: Colors.black),
                                               Column(
                                                 children: [
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold),
-                                                          "instituto Paranaense de Desenvolvimento \n"),
-                                                  ),
-                                                  const Text(
                                                         style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight
                                                                     .bold),
-                                                        "Educacional Fundepar"),
+                                                        "instituto Paranaense de Desenvolvimento \n"),
+                                                  ),
+                                                  const Text(
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                      "Educacional Fundepar"),
                                                   const Padding(
-                                                    padding:
-                                                        EdgeInsets.only(
-                                                            top: 12.0),
+                                                    padding: EdgeInsets.only(
+                                                        top: 12.0),
                                                     child: Text(
                                                         "Av. Água Verde, 2140 - Vila Izabel"),
                                                   ),
                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       const Text(
                                                           "80240-900 - Curitiba - PR -"),
@@ -492,20 +513,19 @@ class Apucarana extends StatelessWidget {
                                                           launchUrl(Uri.parse(
                                                               "https://www.google.com/maps?q=Rua+dos+Funcion%C3%A1rios,+1323+-+Cabral+80035-050+Curitiba+PR&hl=pt-BR&ie=UTF8&ll=-25.409342,-49.249048&spn=0.011358,0.021651&sll=-25.45403,-49.292382&sspn=0.011354,0.021651&z=16&iwloc=r1"));
                                                         },
-                                                        child:
-                                                            const Text('Localização'),
+                                                        child: const Text(
+                                                            'Localização'),
                                                       ),
-                                                      
                                                     ],
                                                   ),
                                                   TextButton(
-                                                        onPressed: () {
-                                                          launchUrl(Uri.parse(
-                                                              "https://www.fundepar.pr.gov.br/Formulario/Contato"));
-                                                        },
-                                                        child:
-                                                             const Text('Telefones'),
-                                                      ),
+                                                    onPressed: () {
+                                                      launchUrl(Uri.parse(
+                                                          "https://www.fundepar.pr.gov.br/Formulario/Contato"));
+                                                    },
+                                                    child:
+                                                        const Text('Telefones'),
+                                                  ),
                                                 ],
                                               ),
                                             ],
@@ -525,6 +545,7 @@ class Apucarana extends StatelessWidget {
           ),
         ),
         drawer: const Drawer(child: PersonalizedDrawer()),
+        endDrawer: const Drawer(child: PersonalizedDrawer()),
       ),
     );
   }

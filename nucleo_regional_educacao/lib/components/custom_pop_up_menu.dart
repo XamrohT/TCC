@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nucleo_regional_educacao/components/custom_procura_card.dart';
+import 'package:nucleo_regional_educacao/shared_Data/procura_card_values.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_scraper/web_scraper.dart';
-
-enum Menu { itemOne, itemTwo, itemThree, itemFour }
 
 class CustomPopUp extends StatefulWidget {
   const CustomPopUp({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class CustomPopUp extends StatefulWidget {
 }
 
 class _CustomPopUpState extends State<CustomPopUp> {
-  String dropdownValue = "Selecione";
+  String dropdownValue = "";
   final Uri _url = Uri.parse(
       "https://www.nre.seed.pr.gov.br/modules/conteudo/conteudo.php?conteudo=39");
   Color mainColor = const Color(0xffe5e5ea);
@@ -20,45 +20,44 @@ class _CustomPopUpState extends State<CustomPopUp> {
   @override
   Widget build(BuildContext context) {
     String _selectedMenu = '';
-    return Material(
-      child: Container(
-        height: 50,
-        width: 250,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(5), topLeft: Radius.circular(5)),
-          color: mainColor,
+    return AlertDialog(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            20.0,
+          ),
         ),
-        child: Column(
-          children: [
-            PopupMenuButton<Menu>(
-              // Callback that sets the selected popup menu item.
-              onSelected: (Menu item) {
-                setState(() {
-                  print('aqui');
-                  _selectedMenu = item.name;
-                });
+      ),
+      contentPadding: const EdgeInsets.only(
+        top: 10.0,
+      ),
+      title: const Text(
+        "O que você procura?",
+        style: TextStyle(fontSize: 24.0),
+      ),
+      content: Container(
+        height: 400,
+        width: MediaQuery.of(context).size.width > 600
+            ? MediaQuery.of(context).size.width * 0.7
+            : MediaQuery.of(context).size.width,
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(8.0),
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: GridView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 20,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return ProcuraCardComponent(
+                    titulo: ProcuraTittlesAndLinks.procuraTitle[index],
+                    link: ProcuraTittlesAndLinks.procuraLinks[index]);
               },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<Menu>>[
-                const PopupMenuItem<Menu>(
-                  value: Menu.itemOne,
-                  child: Text('Item 1'),
-                ),
-                const PopupMenuItem<Menu>(
-                  value: Menu.itemTwo,
-                  child: Text('Item 2'),
-                ),
-                const PopupMenuItem<Menu>(
-                  value: Menu.itemThree,
-                  child: Text('Item 3'),
-                ),
-                const PopupMenuItem<Menu>(
-                  value: Menu.itemFour,
-                  child: Text('Item 4'),
-                ),
-              ],
             ),
-          ],
+          ),
         ),
       ),
     );
