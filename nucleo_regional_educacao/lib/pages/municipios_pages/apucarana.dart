@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucleo_regional_educacao/components/Drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
 import 'package:nucleo_regional_educacao/components/custom_pop_up_menu.dart';
+import 'package:nucleo_regional_educacao/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Apucarana extends StatelessWidget {
@@ -545,7 +546,26 @@ class Apucarana extends StatelessWidget {
           ),
         ),
         drawer: const Drawer(child: PersonalizedDrawer()),
-        endDrawer: const Drawer(child: PersonalizedDrawer()),
+        endDrawer:  Drawer(
+         child:EndDrawer(
+        '/apucarana/apucarana_chefia',
+        '/apucarana/apucarana_colegios_e_escolas',
+        '/apucarana/apucarana_documentacao_escolar',
+        '/apucarana/apucarana_edificacoes_escolares',
+        '/apucarana/apucarana_educacao',
+        '/apucarana/apucarana_estrutura',
+        '/apucarana/apucarana_estrutura_Funcionamento',
+        '/apucarana/apucarana_gestao_escolar',
+        '/apucarana/apucarana_legislacao_escolar',
+        '/apucarana/apucarana_logistica',
+        '/apucarana/apucarana_ouvidoria',
+        '/apucarana/apucarana_protocolo',
+        '/apucarana/apucarana_recursos_descentralizados',
+        '/apucarana/apucarana_recursos_humanos',
+        '/apucarana/apucarana_registro_escolar',
+        '/apucarana/apucarana_tecnologia',
+        '/apucarana/apucarana_telefones')
+        ),
       ),
     );
   }

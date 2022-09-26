@@ -3,6 +3,7 @@ import 'package:nucleo_regional_educacao/components/Drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
 import 'package:nucleo_regional_educacao/components/card.dart';
 import 'package:nucleo_regional_educacao/components/custom_pop_up_menu.dart';
+import 'package:nucleo_regional_educacao/components/end_drawer.dart';
 // ignore: depend_on_referenced_packages
 import 'package:url_launcher/url_launcher.dart';
 // ignore: depend_on_referenced_packages
@@ -364,6 +365,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
         drawer: const Drawer(
           child: PersonalizedDrawer(),
         ),
+        
       ),
     );
   }

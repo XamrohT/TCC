@@ -8,14 +8,14 @@ import 'package:url_launcher/url_launcher.dart';
 
 //import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
-class FirstScreen extends StatefulWidget {
-  const FirstScreen({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<FirstScreen> createState() => _FirstScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _FirstScreenState extends State<FirstScreen> {
+class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late FutureOr<Uint8List> content;
   @override
