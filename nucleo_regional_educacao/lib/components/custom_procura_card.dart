@@ -11,7 +11,7 @@ class ProcuraCardComponent extends StatefulWidget {
 }
 
 class _ProcuraCardComponentState extends State<ProcuraCardComponent> {
-  final Color color = const Color(0xff3b30);
+  final Color color = const Color(0x00ff3b30);
   Color secondColor = const Color(0xffaeaeb2);
   Color buttonColor = const Color(0xff1590a6);
   @override

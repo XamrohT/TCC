@@ -5,9 +5,10 @@ class AvisosNreComponent extends StatelessWidget {
   final String? label;
   final IconData? icon;
   final Icon? importedIcon;
+  final String? image;
 
   const AvisosNreComponent(
-      {this.onTapped, this.label, this.icon, this.importedIcon});
+      {super.key, this.onTapped, this.label, this.icon, this.importedIcon, this.image});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,7 +29,7 @@ class AvisosNreComponent extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.185,
               width: MediaQuery.of(context).size.width > 600
                   ? MediaQuery.of(context).size.width * 0.10
-                  : MediaQuery.of(context).size.width * 0.25,
+                  : MediaQuery.of(context).size.width * 0.27,
               // ignore: prefer_const_constructors
               decoration: BoxDecoration(
                 color: Colors.transparent,
@@ -46,25 +47,18 @@ class AvisosNreComponent extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.zero,
-                            child: Icon(
-                              icon,
-                              color: Colors.black,
-                              size: 40,
-                            ),
+                            child: Image.asset('$image')
                           ),
-                          Center(
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  label!,
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize:
-                                          MediaQuery.of(context).size.height *
-                                              0.020),
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Center(
+                              child: Text(
+                                label!,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.020),
                               ),
                             ),
                           ),

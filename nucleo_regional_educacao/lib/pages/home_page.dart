@@ -5,7 +5,6 @@ import 'package:nucleo_regional_educacao/components/Drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_dropdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 //import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,36 +32,39 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    IconButton(
-                      icon: const Icon(
-                        Icons.menu,
-                        color: Colors.black,
+              Material(
+                elevation: 4,
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 9,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      IconButton(
+                        icon: const Icon(
+                          Icons.menu,
+                          color: Colors.black,
+                        ),
+                        onPressed: () {
+                          _scaffoldKey.currentState?.openDrawer();
+                        },
                       ),
-                      onPressed: () {
-                        _scaffoldKey.currentState?.openDrawer();
-                      },
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.contain,
-                              image:
-                                  AssetImage('assets/images/logo_parana.png'),
+                      Expanded(
+                        child: Center(
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.contain,
+                                image:
+                                    AssetImage('assets/images/logo_parana.png'),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Padding(

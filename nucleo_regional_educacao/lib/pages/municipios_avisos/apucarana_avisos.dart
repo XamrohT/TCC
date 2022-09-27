@@ -57,37 +57,39 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    IconButton(
-                      icon: const Icon(
-                        Icons.menu,
-                        color: Colors.black,
+              Material(
+                elevation: 4,
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 9,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      IconButton(
+                        icon: const Icon(
+                          Icons.menu,
+                          color: Colors.black,
+                        ),
+                        onPressed: () {
+                          _scaffoldKey.currentState?.openDrawer();
+                        },
                       ),
-                      onPressed: () {
-                        _scaffoldKey.currentState?.openDrawer();
-                      },
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.contain,
-                              image:
-                                  AssetImage('assets/images/logo_parana.png'),
+                      Expanded(
+                        child: Center(
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.contain,
+                                image:
+                                    AssetImage('assets/images/logo_parana.png'),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
- 
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Padding(
@@ -109,15 +111,15 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                         AvisosNreComponent(
                             label: "Institucional",
                             onTapped: () => {Navigator.pop(context)},
-                            icon: Icons.account_balance),
+                            image: 'assets/images/icon_institucional.png'),
                         AvisosNreComponent(
                             label: "Avisos",
                             onTapped: () => {print("Institucional")},
-                            icon: Icons.my_library_books),
+                            image: 'assets/images/icon_informativos.png'),
                         AvisosNreComponent(
                             label: "Noticias",
                             onTapped: () => {print("Institucional")},
-                            icon: Icons.newspaper),
+                            image: 'assets/images/icon_noticias.png'),
                       ]),
                 ),
               ),
@@ -365,7 +367,6 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
         drawer: const Drawer(
           child: PersonalizedDrawer(),
         ),
-        
       ),
     );
   }

@@ -74,6 +74,26 @@ flutter:
     - assets/images/apucarana_fachada.jpg
     - assets/images/mapa_nre_apucarana.jpg
     - assets/images/apucarana_chefe.png
+    - assets/images/conselho_educacao.png
+    - assets/images/documentos_oficiais64.png
+    - assets/images/manuais64.png
+    - assets/images/icon_noticias.png
+    - assets/images/icon_institucional.png
+    - assets/images/obras_online64.png
+    - assets/images/gerenciamento64.png
+    - assets/images/documentos_orientadores.png
+    - assets/images/consulta64.png
+    - assets/images/formacao_continuada64.png
+    - assets/images/otp64.png
+    - assets/images/patrimonio64.png
+    - assets/images/onibus_escolar.png
+    - assets/images/leite_criancas64.png
+    - assets/images/icon_alimentacao.png
+    - assets/images/brigada64.png
+    - assets/images/georreferenciamento.png
+    - assets/images/consulta_dados64.png
+    - assets/images/financeiro.png
+    - assets/images/fundo_rotativo64.png
 
   #   - images/a_dot_ham.jpeg
 

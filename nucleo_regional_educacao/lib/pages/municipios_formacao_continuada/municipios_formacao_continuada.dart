@@ -4,14 +4,16 @@ import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
 import 'package:nucleo_regional_educacao/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Apucarana_ouvidoria extends StatefulWidget {
-  const Apucarana_ouvidoria({Key? key}) : super(key: key);
+class Apucarana_formacao_continuada extends StatefulWidget {
+  const Apucarana_formacao_continuada({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_ouvidoriaState createState() => _Apucarana_ouvidoriaState();
+  _Apucarana_formacao_continuadaState createState() =>
+      _Apucarana_formacao_continuadaState();
 }
 
-class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
+class _Apucarana_formacao_continuadaState
+    extends State<Apucarana_formacao_continuada> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -221,6 +223,7 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                     ),
                     child: SingleChildScrollView(
                       child: SizedBox(
+                        // height: MediaQuery.of(context).size.height/1.4,
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
@@ -231,7 +234,7 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                             Padding(
                               padding: const EdgeInsets.only(top: 24.0),
                               child: Center(
-                                child: Text("Ouvidoria",
+                                child: Text("Formação Continuada",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize:
@@ -250,103 +253,104 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
-                                    'A Ouvidoria tem por propósito buscar soluções para as demandas dos cidadãos, oferecer informações gerenciais e sugestões ao órgão em que atua, visando ao aprimoramento da prestação do serviço, além de contribuir para a formulação de políticas públicas. (Controladoria Geral da União)'),
+                                    'A formação continuada pressupõe o envolvimento de todos os profissionais da escola (professores, agentes educacionais, equipes pedagógica e diretiva). Tem por objetivo promover as ações pedagógicas e reflexões sobre os desafios socioeducacionais. Para tanto, apresenta-se uma série de textos legais, textos informativos, vídeos e outros recursos que subsidiarão os trabalhos em cada escola. '),
                               ),
                             ),
                             const Padding(
                               padding: EdgeInsets.fromLTRB(8.0, 12, 0, 0),
                               child: Text(
-                                'CANAIS DE COMUNICAÇÃO:',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.fromLTRB(8.0, 12, 0, 0),
-                              child: Text(
-                                'Site:',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                             Padding(
-                              padding: EdgeInsets.all(8),
-                              child: TextButton(
-                                onPressed: () {
-                                  launchUrl(
-                                    Uri.parse(
-                                        "https://www.educacao.pr.gov.br/Ouvidoria"),
-                                  );
-                                },
-                                child: const Text('Ouvidoria'),
-                              ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.fromLTRB(8.0, 12, 0, 0),
-                              child: Text(
-                                'Por telefone:',
+                                'Equipe',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
                             const Padding(
                               padding: EdgeInsets.all(8),
-                              child: Text(
-                                  'NRE Apucarana - Ouvidoria'),
+                              child: Text('Coordenadora SICAP'),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text(
-                                    '(43) 3420-1641, 1661, 1682'),
+                                    'Zélia Santos Vaz | zssvaz@seed.pr.gov.br | (43) 3420-1656'),
                               ),
                             ),
-                            const Padding(
-                              padding: EdgeInsets.fromLTRB(8.0, 12, 0, 0),
-                              child: Text(
-                                'Atendimento Pessoal na Ouvidoria do NRE',
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                            const Expanded(
+                              flex: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text('Coordenadoras Pedagógicas'),
                               ),
                             ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  'Com o registro no site acima e atendimento on-line, a sua solicitação poderá ser acessada e acompanhada todo o tempo, e o prazo de tramitação previsto é de 30 dias.'),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  'Serão rejeitadas as manifestações que contenham conteúdo de caráter ofensivo e discriminatório à dignidade e à vida privada das pessoas.'),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  'Quando você registra uma denúncia, espera que seja averiguada. Para que possamos analisar e tomar providências, é importante o detalhamento do fato, possíveis autorias e a apresentação ou indicação de provas que podem ser anexadas ao atendimento.'),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  'É necessário indicar o nome completo do colégio e o município.'),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.fromLTRB(8.0, 12, 0, 0),
-                              child: Text(
-                                'Ouvidoria na Secretaria de Estado da Educação',
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                            const Expanded(
+                              flex: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                    'Sueli da Silva Martins | ssmartins64@seed.pr.gov.br | (43) 3420-1647'),
                               ),
                             ),
-                             const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  '0800-0419192 e (41) 3340-1538'),
+                            const Expanded(
+                              flex: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                    'Maria dos Anjos Grangeiro da Silva | marianjos@seed.pr.gov.br | (43) 3420-1653'),
+                              ),
                             ),
-                             const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  'Endereço: Av. Água Verde, 2.140 - Vila Isabel - CEP: 80.240-900, Curitiba - PR'),
+                            const Expanded(
+                              flex: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                    'PDE'),
+                              ),
                             ),
-                             const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  'Telefones: 0800-0419192 e (41) 3340-1538'),
+                            const Expanded(
+                              flex: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(
+                                    'Luci Helena Gasparotto Moser | lucimoser@seed.pr.gov.br | (43) 3429-1681'),
+                              ),
+                            ),
+                            const Divider(),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(4, 18, 0, 8),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadiusGeometry.lerp(
+                                      BorderRadius.circular(10),
+                                      BorderRadius.circular(10),
+                                      5),
+                                ),
+                                width: MediaQuery.of(context).size.width > 600
+                                    ? MediaQuery.of(context).size.width * 0.7
+                                    : MediaQuery.of(context).size.width,
+                                height:
+                                    MediaQuery.of(context).size.height / 5.0,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                     AvisosNreComponent(
+                                        label: "Consultas",
+                                        onTapped: () => {
+                                              launchUrl(Uri.parse(
+                                                  'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=438'))
+                                            },
+                                        image:
+                                            'assets/images/consulta64.png'),
+                                    AvisosNreComponent(
+                                        label: "Formação Continuada",
+                                        onTapped: () => {
+                                              launchUrl(Uri.parse(
+                                                  'http://www.educadores.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=736'))
+                                            },
+                                        image:
+                                            'assets/images/formacao_continuada64.png'),
+                                  ],
+                                ),
+                              ),
                             ),
                             const Divider(),
                           ],

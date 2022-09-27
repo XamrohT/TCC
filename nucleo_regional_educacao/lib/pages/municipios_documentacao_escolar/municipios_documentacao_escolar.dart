@@ -1,16 +1,19 @@
-
 import 'package:flutter/material.dart';
+import 'package:nucleo_regional_educacao/components/Drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
+import 'package:nucleo_regional_educacao/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Apucarana_documentacao_escolar extends StatefulWidget {
-  const Apucarana_documentacao_escolar({ Key? key }) : super(key: key);
+  const Apucarana_documentacao_escolar({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_documentacao_escolarState createState() => _Apucarana_documentacao_escolarState();
+  _Apucarana_documentacao_escolarState createState() =>
+      _Apucarana_documentacao_escolarState();
 }
 
-class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_escolar> {
+class _Apucarana_documentacao_escolarState
+    extends State<Apucarana_documentacao_escolar> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -18,41 +21,77 @@ class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_
       child: Scaffold(
         key: _scaffoldKey,
         resizeToAvoidBottomInset: false,
+        drawer: const Drawer(child: PersonalizedDrawer()),
+        endDrawer: const Drawer(
+          child: EndDrawer(
+              '/apucarana/apucarana_chefia',
+              '/apucarana/apucarana_colegios_e_escolas',
+              '/apucarana/apucarana_documentacao_escolar',
+              '/apucarana/apucarana_edificacoes_escolares',
+              '/apucarana/apucarana_educacao',
+              '/apucarana/apucarana_estrutura',
+              '/apucarana/apucarana_formacao_continuada',
+              '/apucarana/apucarana_gestao_escolar',
+              '/apucarana/apucarana_legislacao_escolar',
+              '/apucarana/apucarana_logistica',
+              '/apucarana/apucarana_ouvidoria',
+              '/apucarana/apucarana_protocolo',
+              '/apucarana/apucarana_recursos_descentralizados',
+              '/apucarana/apucarana_recursos_humanos',
+              '/apucarana/apucarana_registro_escolar',
+              '/apucarana/apucarana_tecnologia',
+              '/apucarana/apucarana_telefones'),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Column(
                 children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 10,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        IconButton(
-                          icon: const Icon(
-                            Icons.menu,
-                            color: Colors.black,
+                  Material(
+                    elevation: 4,
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height / 9,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          IconButton(
+                            icon: const Icon(
+                              Icons.menu,
+                              color: Colors.black,
+                            ),
+                            onPressed: () {
+                              _scaffoldKey.currentState?.openDrawer();
+                            },
                           ),
-                          onPressed: () {
-                            _scaffoldKey.currentState?.openDrawer();
-                          },
-                        ),
-                        Expanded(
-                          child: Center(
-                            child: Container(
-                              height: MediaQuery.of(context).size.height * 0.1,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  fit: BoxFit.contain,
-                                  image: AssetImage(
-                                      'assets/images/logo_parana.png'),
+                          Expanded(
+                            child: Center(
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.1,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.contain,
+                                    image: AssetImage(
+                                        'assets/images/logo_parana.png'),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          Center(
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.menu_open,
+                                color: Colors.black,
+                              ),
+                              onPressed: () {
+                                _scaffoldKey.currentState?.openEndDrawer();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
@@ -163,15 +202,15 @@ class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_
                           AvisosNreComponent(
                               label: "Institucional",
                               onTapped: () => {Navigator.pop(context)},
-                              icon: Icons.account_balance),
+                              image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
                               onTapped: () => {print("Institucional")},
-                              icon: Icons.my_library_books),
+                              image: 'assets/images/icon_informativos.png'),
                           AvisosNreComponent(
                               label: "Noticias",
                               onTapped: () => {print("Institucional")},
-                              icon: Icons.newspaper),
+                              image: 'assets/images/icon_noticias.png'),
                         ],
                       ),
                     ),
@@ -184,7 +223,7 @@ class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_
                     ),
                     child: SingleChildScrollView(
                       child: SizedBox(
-                        height: MediaQuery.of(context).size.height,
+                        // height: MediaQuery.of(context).size.height/1.4,
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
@@ -194,56 +233,14 @@ class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 24.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Center(
-                                    child: Text("CHEFIA",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
+                              child: Center(
+                                child: Text("Documentação Escolar",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize:
+                                            MediaQuery.of(context).size.height *
                                                 0.02)),
-                                  ),
-                                ],
                               ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: ClipRRect(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(24)),
-                                    child: Image.asset(
-                                        'assets/images/apucarana_chefe.png',
-                                        fit: BoxFit.contain),
-                                  ),
-                                ),
-                                Wrap(
-                                  alignment: WrapAlignment.spaceBetween,
-                                  direction: Axis.vertical,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Center(
-                                        child: Text(
-                                          'Vladimir Barbosa da Silva',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),
-                                    const Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Text(
-                                          'Chefe do Núcleo Regional de \nEducação de Apucarana'),
-                                    ),
-                                  ],
-                                ),
-                              ],
                             ),
                             const Padding(
                               padding: EdgeInsets.all(8.0),
@@ -256,15 +253,7 @@ class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
-                                    'Ao Chefe do Núcleo Regional de Educação compete divulgar e zelar pelo cumprimento da legislação, regulamentos, normas e diretrizes relativos à educação e serviços administrativos, bem como representar oficialmente a Secretaria de Estado da Educação perante as autoridades, órgãos federais, estaduais, municipais e junto às instituições culturais, profissionais, científicas e associativas ou corporações particulares, quando solicitado'),
-                              ),
-                            ),
-                            const Expanded(
-                              flex: 0,
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                    'Ao Assistente Técnico compete acompanhar a chefia do NRE na implantação e acompanhamento de todos os procedimentos administrativos do NRE, respondendo, na ausência da chefia, pelas atividades do NRE'),
+                                    'Ao Setor de Documentação Escolar / CDE compete orientar quanto ao preenchimento de Históricos Escolares e demais documentos que compõem a pasta individual dos alunos. Também compete emitir a certidão de regularidade de estudos e orientar quanto ao preenchimento e encaminhar os relatórios finais.'),
                               ),
                             ),
                             const Padding(
@@ -283,26 +272,68 @@ class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_
                               child: Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text(
-                                    'Patrícia Cristina Marchi | patriciamarchi@seed.pr.gov.br | (43) 3420-1671'),
+                                    'Rosana Henrique Esgote de Castro | rosana.esgote@escola.pr.gov.br | (43) 3420-1616'),
                               ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text('Assessoria / Comunicação'),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text(
-                                    'Elaine Mara Cunha Cruz | elainecunha@seed.pr.gov.br | (43) 3420-1660 '),
+                                    'Maria Carolina Benevenuto | maria.benevenuto@escola.pr.gov.br | (43) 3420-1674'),
                               ),
                             ),
                             const Expanded(
+                              flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text(
-                                    'Ana Britici Valério | anabritival@seed.pr.gov.br | (43) 3420-1676 '),
+                                    'Lenite de Fatima Félix | lenite.felix@escola.pr.gov.br | (43) 3420-1615'),
+                              ),
+                            ),
+                            const Divider(),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(4, 18, 0, 8),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadiusGeometry.lerp(
+                                      BorderRadius.circular(10),
+                                      BorderRadius.circular(10),
+                                      5),
+                                ),
+                                width: MediaQuery.of(context).size.width > 600
+                                    ? MediaQuery.of(context).size.width * 0.7
+                                    : MediaQuery.of(context).size.width,
+                                height:
+                                    MediaQuery.of(context).size.height / 7.0,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    AvisosNreComponent(
+                                        label: "Conselho Escolar",
+                                        onTapped: () => {
+                                              launchUrl(Uri.parse(
+                                                  'https://www.cee.pr.gov.br'))
+                                            },
+                                        image:
+                                            'assets/images/conselho_educacao.png'),
+                                    AvisosNreComponent(
+                                        label: "Legislação",
+                                        onTapped: () => {
+                                              launchUrl(Uri.parse(
+                                                  'https://www.educacao.pr.gov.br/Legislacao'))
+                                            },
+                                        image:
+                                            'assets/images/documentos_oficiais64.png'),
+                                    AvisosNreComponent(
+                                        label: "Regimento Escolar",
+                                        onTapped: () => {
+                                              launchUrl(Uri.parse(
+                                                  'https://www.educacao.pr.gov.br/Fundamentacao-regimento-escolar'))
+                                            },
+                                        image: 'assets/images/manuais64.png'),
+                                  ],
+                                ),
                               ),
                             ),
                             const Divider(),
@@ -314,7 +345,6 @@ class _Apucarana_documentacao_escolarState extends State<Apucarana_documentacao_
                   Material(
                     color: Colors.grey[200],
                     child: Container(
-                      
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.start,

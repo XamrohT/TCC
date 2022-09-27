@@ -177,7 +177,7 @@ class Apucarana extends StatelessWidget {
                           topLeft: Radius.circular(40.0),
                           topRight: Radius.circular(40.0),
                         ),
-                        child: Container(
+                        child: SizedBox(
                           width: MediaQuery.of(context).size.width > 600
                               ? MediaQuery.of(context).size.width * 0.7
                               : MediaQuery.of(context).size.width,
@@ -188,18 +188,18 @@ class Apucarana extends StatelessWidget {
                                 AvisosNreComponent(
                                     label: "Institucional",
                                     onTapped: () => {print("Institucional")},
-                                    icon: Icons.account_balance),
+                                    image: 'assets/images/icon_institucional.png'),
                                 AvisosNreComponent(
                                     label: "Avisos",
                                     onTapped: () => {
                                           Navigator.pushNamed(context,
                                               '/apucarana/apucarana_avisos')
                                         },
-                                    icon: Icons.my_library_books),
+                                    image: 'assets/images/icon_informativos.png'),
                                 AvisosNreComponent(
                                     label: "Noticias",
                                     onTapped: () => {print("noticias")},
-                                    icon: Icons.newspaper),
+                                    image: 'assets/images/icon_noticias.png'),
                               ]),
                         ),
                       ),
@@ -216,7 +216,7 @@ class Apucarana extends StatelessWidget {
                           topLeft: Radius.circular(40.0),
                           topRight: Radius.circular(40.0),
                         ),
-                        child: Container(
+                        child: SizedBox(
                           width: MediaQuery.of(context).size.width > 600
                               ? MediaQuery.of(context).size.width * 0.5
                               : MediaQuery.of(context).size.width,
@@ -554,7 +554,7 @@ class Apucarana extends StatelessWidget {
         '/apucarana/apucarana_edificacoes_escolares',
         '/apucarana/apucarana_educacao',
         '/apucarana/apucarana_estrutura',
-        '/apucarana/apucarana_estrutura_Funcionamento',
+        '/apucarana/apucarana_formacao_continuada',
         '/apucarana/apucarana_gestao_escolar',
         '/apucarana/apucarana_legislacao_escolar',
         '/apucarana/apucarana_logistica',

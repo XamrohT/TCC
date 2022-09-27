@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nucleo_regional_educacao/components/Drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
+import 'package:nucleo_regional_educacao/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Apucarana_chefia extends StatefulWidget {
@@ -17,41 +19,77 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
       child: Scaffold(
         key: _scaffoldKey,
         resizeToAvoidBottomInset: false,
+        drawer: const Drawer(child: PersonalizedDrawer()),
+        endDrawer: const Drawer(
+          child: EndDrawer(
+              '/apucarana/apucarana_chefia',
+              '/apucarana/apucarana_colegios_e_escolas',
+              '/apucarana/apucarana_documentacao_escolar',
+              '/apucarana/apucarana_edificacoes_escolares',
+              '/apucarana/apucarana_educacao',
+              '/apucarana/apucarana_estrutura',
+              '/apucarana/apucarana_formacao_continuada',
+              '/apucarana/apucarana_gestao_escolar',
+              '/apucarana/apucarana_legislacao_escolar',
+              '/apucarana/apucarana_logistica',
+              '/apucarana/apucarana_ouvidoria',
+              '/apucarana/apucarana_protocolo',
+              '/apucarana/apucarana_recursos_descentralizados',
+              '/apucarana/apucarana_recursos_humanos',
+              '/apucarana/apucarana_registro_escolar',
+              '/apucarana/apucarana_tecnologia',
+              '/apucarana/apucarana_telefones'),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Column(
                 children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 10,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        IconButton(
-                          icon: const Icon(
-                            Icons.menu,
-                            color: Colors.black,
+                  Material(
+                    elevation: 4,
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height / 9,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          IconButton(
+                            icon: const Icon(
+                              Icons.menu,
+                              color: Colors.black,
+                            ),
+                            onPressed: () {
+                              _scaffoldKey.currentState?.openDrawer();
+                            },
                           ),
-                          onPressed: () {
-                            _scaffoldKey.currentState?.openDrawer();
-                          },
-                        ),
-                        Expanded(
-                          child: Center(
-                            child: Container(
-                              height: MediaQuery.of(context).size.height * 0.1,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  fit: BoxFit.contain,
-                                  image: AssetImage(
-                                      'assets/images/logo_parana.png'),
+                          Expanded(
+                            child: Center(
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.1,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.contain,
+                                    image: AssetImage(
+                                        'assets/images/logo_parana.png'),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          Center(
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.menu_open,
+                                color: Colors.black,
+                              ),
+                              onPressed: () {
+                                _scaffoldKey.currentState?.openEndDrawer();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
@@ -162,15 +200,15 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                           AvisosNreComponent(
                               label: "Institucional",
                               onTapped: () => {Navigator.pop(context)},
-                              icon: Icons.account_balance),
+                              image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
                               onTapped: () => {print("Institucional")},
-                              icon: Icons.my_library_books),
+                              image: 'assets/images/icon_informativos.png'),
                           AvisosNreComponent(
                               label: "Noticias",
                               onTapped: () => {print("Institucional")},
-                              icon: Icons.newspaper),
+                              image: 'assets/images/icon_noticias.png'),
                         ],
                       ),
                     ),
@@ -313,7 +351,6 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                   Material(
                     color: Colors.grey[200],
                     child: Container(
-                      
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.start,
