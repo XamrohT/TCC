@@ -68,57 +68,73 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 120.0),
+                padding: const EdgeInsets.only(top: 60.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    Text(
+                      'NÚCLEOS REGIONAIS DE EDUCAÇÃO',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     const Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.fromLTRB(8.0, 12, 8, 12),
                       child: AvisosNreDropdown(),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.8,
+                    Material(
+                      elevation: 2,
                       color: Colors.grey[200],
-                      child: Center(
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text("$size"),
-                            ),
-                            Center(
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.45,
-                                width: MediaQuery.of(context).size.width * 1,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.contain,
-                                    image: AssetImage(
-                                        'assets/images/mapa_parana.png'),
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 1.1,
+                        height: MediaQuery.of(context).size.height / 2.2,
+                        child: Center(
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.45,
+                                  width: MediaQuery.of(context).size.width * 1,
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.contain,
+                                      image: AssetImage(
+                                          'assets/images/mapa_parana.png'),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    const Divider(),
-                  ],
-                ),
-              ),
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                child: Stack(
-                  children: const [
-                    Positioned(
-                      bottom: 10,
-                      child: Text("Ultimas Notícias"),
+                    Divider(
+                      color: Colors.black,
+                      indent: 20,
+                      endIndent: 10,
                     ),
                   ],
                 ),
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(18.0, 8, 8, 0),
+                    child: Container(
+                        height: 30,
+                        width: MediaQuery.of(context).size.width,
+                        child: Text("Ultimas Notícias:")),
+                  ),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
+                      child: Text('Eleições 2022',
+                          style: TextStyle(color: Colors.orange,fontSize: 12)),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

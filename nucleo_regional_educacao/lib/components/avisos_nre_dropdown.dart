@@ -11,24 +11,26 @@ class AvisosNreDropdown extends StatefulWidget {
 }
 
 class _AvisosNreDropdownState extends State<AvisosNreDropdown> {
-  String dropdownValue = "Selecione";
+  String dropdownValue = "Selecione um núcleo";
   final Uri _url = Uri.parse(
       "https://www.nre.seed.pr.gov.br/modules/conteudo/conteudo.php?conteudo=39");
-  Color mainColor = const Color(0xffe5e5ea);
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
+      elevation: 4,
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+          child: Container(
         height: 50,
-        width: 250,
+        width: 230,
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(5), topLeft: Radius.circular(5)),
-          color: mainColor,
-        ),
-        child: Column(children: [
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+            border: Border.all(color: Colors.black54),
+            
+            ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           DropdownButtonFormField<String>(
+            decoration: InputDecoration.collapsed(hintText: ''),
             style: const TextStyle(),
             value: dropdownValue,
             onChanged: (String? value) async {
@@ -40,7 +42,7 @@ class _AvisosNreDropdownState extends State<AvisosNreDropdown> {
               }
             },
             items: <String>[
-              'Selecione',
+              'Selecione um núcleo',
               'Apucarana',
               'Área Metropolitana Norte',
               'Área Metropolitana Sul',

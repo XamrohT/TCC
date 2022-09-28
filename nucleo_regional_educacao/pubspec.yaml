@@ -73,6 +73,7 @@ flutter:
     - assets/images/mapa_parana.svg
     - assets/images/apucarana_fachada.jpg
     - assets/images/mapa_nre_apucarana.jpg
+    - assets/images/Brasao_do_parana.png
     - assets/images/apucarana_chefe.png
     - assets/images/conselho_educacao.png
     - assets/images/documentos_oficiais64.png
@@ -93,7 +94,28 @@ flutter:
     - assets/images/georreferenciamento.png
     - assets/images/consulta_dados64.png
     - assets/images/financeiro.png
-    - assets/images/fundo_rotativo64.png
+    - assets/images/cadastro64.png
+    - assets/images/diario_oficial64.png
+    - assets/images/documentos_necessarios64.png
+    - assets/images/email.png
+    - assets/images/ordem_servico.jpg
+    - assets/images/parana_previdencia64.png
+    - assets/images/prconsig64.png
+    - assets/images/processo_seletivo64.png
+    - assets/images/remocao64.png
+    - assets/images/sas64.png
+    - assets/images/saude.png
+    - assets/images/suporte_sere64.png
+    - assets/images/censo64.png
+    - assets/images/sabi.png
+    - assets/images/tutoriais.png
+    - assets/images/dedi.png
+    - assets/images/deein.png
+    - assets/images/educacao_infantil64.png
+    - assets/images/educacao_profissional.png
+    - assets/images/eja.png
+    - assets/images/equipe_multi64.png
+    
 
   #   - images/a_dot_ham.jpeg
 
