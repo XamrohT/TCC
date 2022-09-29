@@ -107,7 +107,7 @@ class _Apucarana_formacao_continuadaState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +195,14 @@ class _Apucarana_formacao_continuadaState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -302,8 +303,7 @@ class _Apucarana_formacao_continuadaState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'PDE'),
+                                child: Text('PDE'),
                               ),
                             ),
                             const Expanded(
@@ -327,19 +327,18 @@ class _Apucarana_formacao_continuadaState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Consultas",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=438'))
                                             },
-                                        image:
-                                            'assets/images/consulta64.png'),
+                                        image: 'assets/images/consulta64.png'),
                                     AvisosNreComponent(
                                         label: "Formação Continuada",
                                         onTapped: () => {
@@ -518,7 +517,7 @@ class _Apucarana_formacao_continuadaState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

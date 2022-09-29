@@ -5,9 +5,14 @@ import 'package:nucleo_regional_educacao/components/custom_pop_up_menu.dart';
 import 'package:nucleo_regional_educacao/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Apucarana extends StatelessWidget {
+class Apucarana extends StatefulWidget {
   const Apucarana({super.key});
 
+  @override
+  State<Apucarana> createState() => _ApucaranaState();
+}
+
+class _ApucaranaState extends State<Apucarana> {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -83,7 +88,7 @@ class Apucarana extends StatelessWidget {
                           width: MediaQuery.of(context).size.width > 600
                               ? MediaQuery.of(context).size.width * 0.5
                               : MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height / 6.0,
+                          // height: MediaQuery.of(context).size.height / 6.0,
                           child: Column(
                             children: [
                               Padding(
@@ -187,15 +192,17 @@ class Apucarana extends StatelessWidget {
                               children: [
                                 AvisosNreComponent(
                                     label: "Institucional",
-                                    onTapped: () => {print("Institucional")},
-                                    image: 'assets/images/icon_institucional.png'),
+                                    onTapped: () => {snackBar()},
+                                    image:
+                                        'assets/images/icon_institucional.png'),
                                 AvisosNreComponent(
                                     label: "Avisos",
                                     onTapped: () => {
                                           Navigator.pushNamed(context,
                                               '/apucarana/apucarana_avisos')
                                         },
-                                    image: 'assets/images/icon_informativos.png'),
+                                    image:
+                                        'assets/images/icon_informativos.png'),
                                 AvisosNreComponent(
                                     label: "Noticias",
                                     onTapped: () => {print("noticias")},
@@ -278,7 +285,9 @@ class Apucarana extends StatelessWidget {
                                     height:
                                         MediaQuery.of(context).size.height / 4,
                                     width: MediaQuery.of(context).size.width,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(12)),
                                       image: DecorationImage(
                                         fit: BoxFit.contain,
                                         image: AssetImage(
@@ -474,7 +483,7 @@ class Apucarana extends StatelessWidget {
                                                   color: Colors.black),
                                               Column(
                                                 children: [
-                                                  const Padding(
+                                                  Padding(
                                                     padding: EdgeInsets.only(
                                                         top: 12.0),
                                                     child: Text(
@@ -484,7 +493,7 @@ class Apucarana extends StatelessWidget {
                                                                     .bold),
                                                         "instituto Paranaense de Desenvolvimento \n"),
                                                   ),
-                                                  const Text(
+                                                  Text(
                                                       style: TextStyle(
                                                           fontWeight:
                                                               FontWeight.bold),
@@ -546,27 +555,41 @@ class Apucarana extends StatelessWidget {
           ),
         ),
         drawer: const Drawer(child: PersonalizedDrawer()),
-        endDrawer:  Drawer(
-         child:EndDrawer(
-        '/apucarana/apucarana_chefia',
-        '/apucarana/apucarana_colegios_e_escolas',
-        '/apucarana/apucarana_documentacao_escolar',
-        '/apucarana/apucarana_edificacoes_escolares',
-        '/apucarana/apucarana_educacao',
-        '/apucarana/apucarana_estrutura',
-        '/apucarana/apucarana_formacao_continuada',
-        '/apucarana/apucarana_gestao_escolar',
-        '/apucarana/apucarana_legislacao_escolar',
-        '/apucarana/apucarana_logistica',
-        '/apucarana/apucarana_ouvidoria',
-        '/apucarana/apucarana_protocolo',
-        '/apucarana/apucarana_recursos_descentralizados',
-        '/apucarana/apucarana_recursos_humanos',
-        '/apucarana/apucarana_registro_escolar',
-        '/apucarana/apucarana_tecnologia',
-        '/apucarana/apucarana_telefones')
-        ),
+        endDrawer: Drawer(
+            child: EndDrawer(
+                '/apucarana/apucarana_chefia',
+                '/apucarana/apucarana_colegios_e_escolas',
+                '/apucarana/apucarana_documentacao_escolar',
+                '/apucarana/apucarana_edificacoes_escolares',
+                '/apucarana/apucarana_educacao',
+                '/apucarana/apucarana_estrutura',
+                '/apucarana/apucarana_formacao_continuada',
+                '/apucarana/apucarana_gestao_escolar',
+                '/apucarana/apucarana_legislacao_escolar',
+                '/apucarana/apucarana_logistica',
+                '/apucarana/apucarana_ouvidoria',
+                '/apucarana/apucarana_protocolo',
+                '/apucarana/apucarana_recursos_descentralizados',
+                '/apucarana/apucarana_recursos_humanos',
+                '/apucarana/apucarana_registro_escolar',
+                '/apucarana/apucarana_tecnologia',
+                '/apucarana/apucarana_telefones')),
       ),
     );
+  }
+
+  snackBar() {
+    final snackBar = SnackBar(
+      content: SizedBox(
+        height: 20,
+        width: MediaQuery.of(context).size.width,
+        child: Center(
+            child: const Text('Você já está localizado na página avisos.')),
+      ),
+    );
+
+    // Find the ScaffoldMessenger in the widget tree
+    // and use it to show a SnackBar.
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

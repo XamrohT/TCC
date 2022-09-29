@@ -30,7 +30,7 @@ class _Apucarana_edificacoes_escolaresState
               '/apucarana/apucarana_edificacoes_escolares',
               '/apucarana/apucarana_educacao',
               '/apucarana/apucarana_estrutura',
-              'apucarana/apucarana_formacao_continuada',
+              '/apucarana/apucarana_formacao_continuada',
               '/apucarana/apucarana_gestao_escolar',
               '/apucarana/apucarana_legislacao_escolar',
               '/apucarana/apucarana_logistica',
@@ -107,7 +107,7 @@ class _Apucarana_edificacoes_escolaresState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +195,14 @@ class _Apucarana_edificacoes_escolaresState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -303,8 +304,7 @@ class _Apucarana_edificacoes_escolaresState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height: MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -506,7 +506,7 @@ class _Apucarana_edificacoes_escolaresState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

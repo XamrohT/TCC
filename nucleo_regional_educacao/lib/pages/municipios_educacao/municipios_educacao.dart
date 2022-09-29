@@ -8,12 +8,10 @@ class Apucarana_educacao extends StatefulWidget {
   const Apucarana_educacao({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_educacaoState createState() =>
-      _Apucarana_educacaoState();
+  _Apucarana_educacaoState createState() => _Apucarana_educacaoState();
 }
 
-class _Apucarana_educacaoState
-    extends State<Apucarana_educacao> {
+class _Apucarana_educacaoState extends State<Apucarana_educacao> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -107,7 +105,7 @@ class _Apucarana_educacaoState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +193,14 @@ class _Apucarana_educacaoState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -254,21 +253,21 @@ class _Apucarana_educacaoState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Diversidade e Direitos Humanos",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=196'))
                                             },
-                                        image:
-                                            'assets/images/dedi.png'),
+                                        image: 'assets/images/dedi.png'),
                                     AvisosNreComponent(
-                                        label: "Educação infantil e anos iniciais",
+                                        label:
+                                            "Educação infantil e anos iniciais",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=2'))
@@ -291,8 +290,8 @@ class _Apucarana_educacaoState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -302,15 +301,15 @@ class _Apucarana_educacaoState
                                               launchUrl(Uri.parse(
                                                   'https://www.agricultura.pr.gov.br/Programa-Leite-das-Criancas'))
                                             },
-                                        image:
-                                            'assets/images/eja.png'),
+                                        image: 'assets/images/eja.png'),
                                     AvisosNreComponent(
                                         label: "Educação Profissional",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=120'))
                                             },
-                                        image: 'assets/images/educacao_profissional.png'),
+                                        image:
+                                            'assets/images/educacao_profissional.png'),
                                   ],
                                 ),
                               ),
@@ -327,8 +326,8 @@ class _Apucarana_educacaoState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -338,15 +337,15 @@ class _Apucarana_educacaoState
                                               launchUrl(Uri.parse(
                                                   'https://www.agricultura.pr.gov.br/Programa-Leite-das-Criancas'))
                                             },
-                                        image:
-                                            'assets/images/deein.png'),
+                                        image: 'assets/images/deein.png'),
                                     AvisosNreComponent(
                                         label: "Equipe de Ensino",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=120'))
                                             },
-                                        image: 'assets/images/equipe_multi64.png'),
+                                        image:
+                                            'assets/images/equipe_multi64.png'),
                                   ],
                                 ),
                               ),
@@ -364,19 +363,18 @@ class _Apucarana_educacaoState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Consultas",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=438'))
                                             },
-                                        image:
-                                            'assets/images/consulta64.png'),
+                                        image: 'assets/images/consulta64.png'),
                                     AvisosNreComponent(
                                         label: "Formação Continuada",
                                         onTapped: () => {
@@ -555,7 +553,7 @@ class _Apucarana_educacaoState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

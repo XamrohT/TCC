@@ -105,7 +105,7 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -193,13 +193,14 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -267,7 +268,7 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
-                             Padding(
+                            Padding(
                               padding: EdgeInsets.all(8),
                               child: TextButton(
                                 onPressed: () {
@@ -288,15 +289,13 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                             ),
                             const Padding(
                               padding: EdgeInsets.all(8),
-                              child: Text(
-                                  'NRE Apucarana - Ouvidoria'),
+                              child: Text('NRE Apucarana - Ouvidoria'),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    '(43) 3420-1641, 1661, 1682'),
+                                child: Text('(43) 3420-1641, 1661, 1682'),
                               ),
                             ),
                             const Padding(
@@ -333,17 +332,16 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ),
-                             const Padding(
+                            const Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text(
-                                  '0800-0419192 e (41) 3340-1538'),
+                              child: Text('0800-0419192 e (41) 3340-1538'),
                             ),
-                             const Padding(
+                            const Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                   'Endereço: Av. Água Verde, 2.140 - Vila Isabel - CEP: 80.240-900, Curitiba - PR'),
                             ),
-                             const Padding(
+                            const Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                   'Telefones: 0800-0419192 e (41) 3340-1538'),
@@ -514,7 +512,7 @@ class _Apucarana_ouvidoriaState extends State<Apucarana_ouvidoria> {
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

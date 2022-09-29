@@ -104,17 +104,18 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                   width: MediaQuery.of(context).size.width > 600
                       ? MediaQuery.of(context).size.width * 0.7
                       : MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 10.0,
+                  // height: MediaQuery.of(context).size.height / 10.0,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         AvisosNreComponent(
                             label: "Institucional",
-                            onTapped: () => {Navigator.pop(context)},
+                            onTapped: () =>
+                                {Navigator.pushNamed(context, '/apucarana')},
                             image: 'assets/images/icon_institucional.png'),
                         AvisosNreComponent(
                             label: "Avisos",
-                            onTapped: () => {print("Institucional")},
+                            onTapped: () => {snackBar()},
                             image: 'assets/images/icon_informativos.png'),
                         AvisosNreComponent(
                             label: "Noticias",
@@ -314,7 +315,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                                                 fontWeight: FontWeight.bold),
                                             "instituto Paranaense de Desenvolvimento \n"),
                                       ),
-                                      const Text(
+                                      Text(
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold),
                                           "Educacional Fundepar"),
@@ -369,5 +370,20 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
         ),
       ),
     );
+  }
+
+  snackBar() {
+    final snackBar = SnackBar(
+      content: SizedBox(
+        height: 20,
+        width: MediaQuery.of(context).size.width,
+        child: Center(
+            child: const Text('Você já está localizado na página avisos.')),
+      ),
+    );
+
+    // Find the ScaffoldMessenger in the widget tree
+    // and use it to show a SnackBar.
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

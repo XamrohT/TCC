@@ -8,12 +8,10 @@ class Apucarana_telefones extends StatefulWidget {
   const Apucarana_telefones({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_telefonesState createState() =>
-      _Apucarana_telefonesState();
+  _Apucarana_telefonesState createState() => _Apucarana_telefonesState();
 }
 
-class _Apucarana_telefonesState
-    extends State<Apucarana_telefones> {
+class _Apucarana_telefonesState extends State<Apucarana_telefones> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -107,7 +105,7 @@ class _Apucarana_telefonesState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +193,14 @@ class _Apucarana_telefonesState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -246,16 +245,15 @@ class _Apucarana_telefonesState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                    'Geral: (43) 3420-1600 '),
+                                child: Text('Geral: (43) 3420-1600 '),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                    'Telefonista / Protocolo: 3420-1663'),
+                                child:
+                                    Text('Telefonista / Protocolo: 3420-1663'),
                               ),
                             ),
                             const Padding(
@@ -265,16 +263,16 @@ class _Apucarana_telefonesState
                             const Expanded(
                               flex: 0,
                               child: Padding(
-                                padding: EdgeInsets.fromLTRB(8,12,8,8),
-                                child: Text(
-                                    'Chefia: (43) 3420-1600'),
+                                padding: EdgeInsets.fromLTRB(8, 12, 8, 8),
+                                child: Text('Chefia: (43) 3420-1600'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text('Assistente Técnico: (43) 3420-1671'),
+                                child:
+                                    Text('Assistente Técnico: (43) 3420-1671'),
                               ),
                             ),
                             const Expanded(
@@ -288,7 +286,7 @@ class _Apucarana_telefonesState
                             const Expanded(
                               flex: 0,
                               child: Padding(
-                                padding: EdgeInsets.fromLTRB(8,12,8,8),
+                                padding: EdgeInsets.fromLTRB(8, 12, 8, 8),
                                 child: Text(
                                     'Documentação Escolar: (43) 3420-1615 / 3420-1616 / 3420-1674'),
                               ),
@@ -296,7 +294,7 @@ class _Apucarana_telefonesState
                             const Expanded(
                               flex: 0,
                               child: Padding(
-                                padding: EdgeInsets.fromLTRB(8,12,8,8),
+                                padding: EdgeInsets.fromLTRB(8, 12, 8, 8),
                                 child: Text(
                                     'Edificações Escolares: (43) 3420-1614'),
                               ),
@@ -305,56 +303,49 @@ class _Apucarana_telefonesState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Engenheiro Civil: (43) 3420-1665'),
+                                child: Text('Engenheiro Civil: (43) 3420-1665'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
-                                padding: EdgeInsets.fromLTRB(8,12,8,8),
-                                child: Text(
-                                    'Educação Básica'),
-                              ),
-                            ),
-                            const Expanded(
-                              flex: 0,
-                              child: Padding(
-                                padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Coordenação: (43) 3420-1623'),
+                                padding: EdgeInsets.fromLTRB(8, 12, 8, 8),
+                                child: Text('Educação Básica'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Arte: (43) 3420-1628'),
+                                child: Text('Coordenação: (43) 3420-1623'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Biologia: (43) 3420-1632'),
+                                child: Text('Arte: (43) 3420-1628'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Ciências: (43) 3420-1627'),
+                                child: Text('Biologia: (43) 3420-1632'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Educação Física: (43) 3420-1634'),
+                                child: Text('Ciências: (43) 3420-1627'),
+                              ),
+                            ),
+                            const Expanded(
+                              flex: 0,
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text('Educação Física: (43) 3420-1634'),
                               ),
                             ),
                             const Expanded(
@@ -369,24 +360,21 @@ class _Apucarana_telefonesState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Física: (43) 3420-1635'),
+                                child: Text('Física: (43) 3420-1635'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Geografia: (43) 3420-1651'),
+                                child: Text('Geografia: (43) 3420-1651'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'História: (43) 3420-1655'),
+                                child: Text('História: (43) 3420-1655'),
                               ),
                             ),
                             const Expanded(
@@ -401,24 +389,22 @@ class _Apucarana_telefonesState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Língua Portuguesa: (43) 3420-1622'),
+                                child:
+                                    Text('Língua Portuguesa: (43) 3420-1622'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Matemática: (43) 3420-1631'),
+                                child: Text('Matemática: (43) 3420-1631'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
-                                padding: EdgeInsets.fromLTRB(8,12,8,8),
-                                child: Text(
-                                    'Diversidade: (43) 3420-1633'),
+                                padding: EdgeInsets.fromLTRB(8, 12, 8, 8),
+                                child: Text('Diversidade: (43) 3420-1633'),
                               ),
                             ),
                             const Expanded(
@@ -457,8 +443,8 @@ class _Apucarana_telefonesState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Equipe Pedagógica: (43) 3420-1647'),
+                                child:
+                                    Text('Equipe Pedagógica: (43) 3420-1647'),
                               ),
                             ),
                             const Expanded(
@@ -480,7 +466,7 @@ class _Apucarana_telefonesState
                             const Expanded(
                               flex: 0,
                               child: Padding(
-                                padding: EdgeInsets.fromLTRB(8,12,8,8),
+                                padding: EdgeInsets.fromLTRB(8, 12, 8, 8),
                                 child: Text(
                                     'Estrutura e Funcionamento: (43) 3420-1619 / 3420-1620 / 3420-1621'),
                               ),
@@ -513,8 +499,7 @@ class _Apucarana_telefonesState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Motorista: (43) 3420-1617'),
+                                child: Text('Motorista: (43) 3420-1617'),
                               ),
                             ),
                             const Expanded(
@@ -529,8 +514,8 @@ class _Apucarana_telefonesState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Paranaprevidência: (43) 3420-1662'),
+                                child:
+                                    Text('Paranaprevidência: (43) 3420-1662'),
                               ),
                             ),
                             const Expanded(
@@ -548,13 +533,12 @@ class _Apucarana_telefonesState
                                 child: Text(
                                     'SERE: (43) 3420-1644 / 3420-1643 / 3420-1642'),
                               ),
-                            ), 
+                            ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Serviços Gerais: (43) 3420-1617'),
+                                child: Text('Serviços Gerais: (43) 3420-1617'),
                               ),
                             ),
                             const Expanded(
@@ -573,7 +557,6 @@ class _Apucarana_telefonesState
                                     'Suporte Técnico: (43) 3420-1658 / 3420-1659'),
                               ),
                             ),
-
                             const Divider(),
                           ],
                         ),
@@ -740,7 +723,7 @@ class _Apucarana_telefonesState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

@@ -105,7 +105,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -193,13 +193,14 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -219,15 +220,14 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                       topLeft: Radius.circular(40.0),
                       topRight: Radius.circular(40.0),
                     ),
-                    child: SingleChildScrollView(
-                      child: SizedBox(
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width > 600
-                            ? MediaQuery.of(context).size.width * 0.5
-                            : MediaQuery.of(context).size.width,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width > 600
+                          ? MediaQuery.of(context).size.width * 0.5
+                          : MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      child: ClipRect(
+                        child: ListView(
+                          shrinkWrap: true,
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 24.0),
@@ -508,7 +508,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

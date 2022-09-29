@@ -8,12 +8,10 @@ class Apucarana_estrutura extends StatefulWidget {
   const Apucarana_estrutura({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_estruturaState createState() =>
-      _Apucarana_estruturaState();
+  _Apucarana_estruturaState createState() => _Apucarana_estruturaState();
 }
 
-class _Apucarana_estruturaState
-    extends State<Apucarana_estrutura> {
+class _Apucarana_estruturaState extends State<Apucarana_estrutura> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -107,7 +105,7 @@ class _Apucarana_estruturaState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +193,14 @@ class _Apucarana_estruturaState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -265,7 +264,8 @@ class _Apucarana_estruturaState
                             ),
                             const Padding(
                               padding: EdgeInsets.all(8),
-                              child: Text('Cristiane Costa Moreira | crismoreira@escola.pr.gov.br | (43) 3420-1619'),
+                              child: Text(
+                                  'Cristiane Costa Moreira | crismoreira@escola.pr.gov.br | (43) 3420-1619'),
                             ),
                             const Expanded(
                               flex: 0,
@@ -279,7 +279,8 @@ class _Apucarana_estruturaState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text('Marciana Aparecida Silva | marcianasilva@escola.pr.gov.br | (43) 3420-1619'),
+                                child: Text(
+                                    'Marciana Aparecida Silva | marcianasilva@escola.pr.gov.br | (43) 3420-1619'),
                               ),
                             ),
                             const Expanded(
@@ -311,12 +312,12 @@ class _Apucarana_estruturaState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Conselho Escolar",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
@@ -509,7 +510,7 @@ class _Apucarana_estruturaState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

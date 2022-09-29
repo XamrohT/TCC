@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
+import 'package:nucleo_regional_educacao/components/exit_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_scraper/web_scraper.dart';
 
@@ -20,14 +21,13 @@ class _AvisosNreDropdownState extends State<AvisosNreDropdown> {
     return Material(
       elevation: 4,
       borderRadius: BorderRadius.all(Radius.circular(12)),
-          child: Container(
+      child: Container(
         height: 50,
         width: 230,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(12)),
-            border: Border.all(color: Colors.black54),
-            
-            ),
+          border: Border.all(color: Colors.black54),
+        ),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           DropdownButtonFormField<String>(
             decoration: InputDecoration.collapsed(hintText: ''),
@@ -39,6 +39,16 @@ class _AvisosNreDropdownState extends State<AvisosNreDropdown> {
               });
               if (value == 'Apucarana') {
                 Navigator.pushNamed(context, '/apucarana');
+              } else {
+                return showDialog(
+                  context: context,
+                  builder: (context) => ExitConfirmationDialog(
+                    title: "Aviso",
+                    text: "Função não implementada.",
+                    imagePath: "assets/images/warning.png",
+                  ),
+                );
+                setState(() {});
               }
             },
             items: <String>[

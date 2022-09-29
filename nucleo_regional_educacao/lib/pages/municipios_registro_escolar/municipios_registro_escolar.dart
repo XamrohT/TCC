@@ -107,7 +107,7 @@ class _Apucarana_registro_escolarState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +195,14 @@ class _Apucarana_registro_escolarState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -279,7 +280,8 @@ class _Apucarana_registro_escolarState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text('Lilian Beluco da Silva | lilian.silva7@escola.pr.gov.br | (43) 3420-1630'),
+                                child: Text(
+                                    'Lilian Beluco da Silva | lilian.silva7@escola.pr.gov.br | (43) 3420-1630'),
                               ),
                             ),
                             const Divider(),
@@ -295,19 +297,18 @@ class _Apucarana_registro_escolarState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Censo Escolar",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=223'))
                                             },
-                                        image:
-                                            'assets/images/censo64png'),
+                                        image: 'assets/images/censo64png'),
                                     AvisosNreComponent(
                                         label: "Orientações",
                                         onTapped: () => {
@@ -320,7 +321,7 @@ class _Apucarana_registro_escolarState
                                 ),
                               ),
                             ),
-                             Padding(
+                            Padding(
                               padding: const EdgeInsets.fromLTRB(4, 18, 0, 8),
                               child: Container(
                                 decoration: BoxDecoration(
@@ -332,21 +333,22 @@ class _Apucarana_registro_escolarState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
-                                        label: "Sistema Estadual de Jovens e Adultos",
+                                    AvisosNreComponent(
+                                        label:
+                                            "Sistema Estadual de Jovens e Adultos",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=222'))
                                             },
-                                        image:
-                                            'assets/images/sabi.png'),
+                                        image: 'assets/images/sabi.png'),
                                     AvisosNreComponent(
-                                        label: "Sistema Estadual de Registro Escolar",
+                                        label:
+                                            "Sistema Estadual de Registro Escolar",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=598'))
@@ -522,7 +524,7 @@ class _Apucarana_registro_escolarState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

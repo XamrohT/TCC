@@ -8,12 +8,10 @@ class Apucarana_protocolo extends StatefulWidget {
   const Apucarana_protocolo({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_protocoloState createState() =>
-      _Apucarana_protocoloState();
+  _Apucarana_protocoloState createState() => _Apucarana_protocoloState();
 }
 
-class _Apucarana_protocoloState
-    extends State<Apucarana_protocolo> {
+class _Apucarana_protocoloState extends State<Apucarana_protocolo> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -107,7 +105,7 @@ class _Apucarana_protocoloState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +193,14 @@ class _Apucarana_protocoloState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -287,7 +286,8 @@ class _Apucarana_protocoloState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text('Luis Aurélio Surek de Souza | luisaureliosurek@seed.pr.gov.br | (43) 3420-1601'),
+                                child: Text(
+                                    'Luis Aurélio Surek de Souza | luisaureliosurek@seed.pr.gov.br | (43) 3420-1601'),
                               ),
                             ),
                             const Divider(),
@@ -303,8 +303,8 @@ class _Apucarana_protocoloState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -315,7 +315,7 @@ class _Apucarana_protocoloState
                                                   'https://www.eprotocolo.pr.gov.br/spiweb/consultarProtocoloDigital.do?action=iniciarProcesso'))
                                             },
                                         image:
-                                            'assets/images/consulta_dados64.png'),                
+                                            'assets/images/consulta_dados64.png'),
                                   ],
                                 ),
                               ),
@@ -479,14 +479,14 @@ class _Apucarana_protocoloState
                                     color: Colors.black),
                                 Column(
                                   children: [
-                                    const Padding(
+                                    Padding(
                                       padding: EdgeInsets.only(top: 12.0),
                                       child: Text(
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

@@ -8,12 +8,10 @@ class Apucarana_logistica extends StatefulWidget {
   const Apucarana_logistica({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_logisticaState createState() =>
-      _Apucarana_logisticaState();
+  _Apucarana_logisticaState createState() => _Apucarana_logisticaState();
 }
 
-class _Apucarana_logisticaState
-    extends State<Apucarana_logistica> {
+class _Apucarana_logisticaState extends State<Apucarana_logistica> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -107,7 +105,7 @@ class _Apucarana_logisticaState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +193,14 @@ class _Apucarana_logisticaState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -273,7 +272,8 @@ class _Apucarana_logisticaState
                             ),
                             const Padding(
                               padding: EdgeInsets.all(8),
-                              child: Text('Planejamento de Turmas e Matrículas'),
+                              child:
+                                  Text('Planejamento de Turmas e Matrículas'),
                             ),
                             const Expanded(
                               flex: 0,
@@ -287,15 +287,15 @@ class _Apucarana_logisticaState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text('Doriane Teixeira Navarro | doriane.navarro#escola.pr.gov.br | (43) 3420-1673'),
+                                child: Text(
+                                    'Doriane Teixeira Navarro | doriane.navarro#escola.pr.gov.br | (43) 3420-1673'),
                               ),
                             ),
                             const Expanded(
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Transporte Escolar'),
+                                child: Text('Transporte Escolar'),
                               ),
                             ),
                             const Expanded(
@@ -318,8 +318,7 @@ class _Apucarana_logisticaState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Alimentação Escolar'),
+                                child: Text('Alimentação Escolar'),
                               ),
                             ),
                             const Expanded(
@@ -342,8 +341,7 @@ class _Apucarana_logisticaState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Programa Leite das Crianças'),
+                                child: Text('Programa Leite das Crianças'),
                               ),
                             ),
                             const Expanded(
@@ -358,8 +356,7 @@ class _Apucarana_logisticaState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'SIGET'),
+                                child: Text('SIGET'),
                               ),
                             ),
                             const Expanded(
@@ -415,12 +412,12 @@ class _Apucarana_logisticaState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Alimentação Escolar",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
@@ -442,7 +439,8 @@ class _Apucarana_logisticaState
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=33'))
                                             },
-                                        image: 'assets/images/patrimonio64.png'),
+                                        image:
+                                            'assets/images/patrimonio64.png'),
                                   ],
                                 ),
                               ),
@@ -459,19 +457,18 @@ class _Apucarana_logisticaState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Brigada Escolar",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/user.php?xoops_redirect=%2Fmodules%2Fconteudo%2Fconteudo.php%3Fconteudo%3D242'))
                                             },
-                                        image:
-                                            'assets/images/brigada64.png'),
+                                        image: 'assets/images/brigada64.png'),
                                     AvisosNreComponent(
                                         label: "Leite das Crianças",
                                         onTapped: () => {
@@ -486,7 +483,8 @@ class _Apucarana_logisticaState
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=120'))
                                             },
-                                        image: 'assets/images/onibus_escolar.png'),
+                                        image:
+                                            'assets/images/onibus_escolar.png'),
                                   ],
                                 ),
                               ),
@@ -657,7 +655,7 @@ class _Apucarana_logisticaState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

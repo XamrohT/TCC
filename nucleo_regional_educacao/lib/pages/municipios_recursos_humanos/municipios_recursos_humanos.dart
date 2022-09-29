@@ -107,7 +107,7 @@ class _Apucarana_recursos_humanosState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +195,14 @@ class _Apucarana_recursos_humanosState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -514,8 +515,8 @@ class _Apucarana_recursos_humanosState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -557,8 +558,8 @@ class _Apucarana_recursos_humanosState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -601,8 +602,8 @@ class _Apucarana_recursos_humanosState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -645,8 +646,8 @@ class _Apucarana_recursos_humanosState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -656,23 +657,22 @@ class _Apucarana_recursos_humanosState
                                               launchUrl(Uri.parse(
                                                   'https://www.eprotocolo.pr.gov.br/spiweb/consultarProtocoloDigital.do?action=iniciarProcesso'))
                                             },
-                                        image:
-                                            'assets/images/consulta64.png'),
+                                        image: 'assets/images/consulta64.png'),
                                     AvisosNreComponent(
                                         label: "Perícia Médica",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Licencas-e-Afastamentos'))
                                             },
-                                        image:
-                                            'assets/images/saude.png'),
+                                        image: 'assets/images/saude.png'),
                                     AvisosNreComponent(
                                         label: "Sistema RH Seed",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'https://auth-cs.identidadedigital.pr.gov.br/centralautenticacao/login.html?response_type=code&client_id=577bcc914f9e55d5e4e4f82f9f00e7d4&redirect_uri=http%3A%2F%2Fwww.rhseed.pr.gov.br&scope=central.cidadao.obterGruposSistema%20central.cidadao.solicitarAutoCadastro%20central.cidadao.consultar%20central.cidadao.desvincular.usuarios.grupo%20central.cidadao.vincular.usuarios.grupo%20centralcidadao.v1.cidadaos.cpf.get%20centralcidadao.v1.cidadaos.nome.get%20centralcidadao.v1.cidadaos.grupo.get&state=1664383361205&urlCert=https://certauth-cs.identidadedigital.pr.gov.br&dnsCidadao=https://cidadao-cs.identidadedigital.pr.gov.br/centralcidadao&loginPadrao=btnCentral&labelCentral=E-Mail,Login%20Sentinela&modulosDeAutenticacao=btnSentinela,btnEmail,btnCentral&urlLogo=http%3A%2F%2Fwww.rhseed.pr.gov.br%2Frhseed%2Fresources%2Fimages%2Flogo-sistema-grande.png&acesso=2113&tokenFormat=jwt&exibirLinkAutoCadastro=true&exibirLinkRecuperarSenha=true&exibirLinkAutoCadastroCertificado=false&captcha=false'))
                                             },
-                                        image: 'assets/images/documentos_oficiais64.png'),
+                                        image:
+                                            'assets/images/documentos_oficiais64.png'),
                                   ],
                                 ),
                               ),
@@ -689,8 +689,8 @@ class _Apucarana_recursos_humanosState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -700,16 +700,14 @@ class _Apucarana_recursos_humanosState
                                               launchUrl(Uri.parse(
                                                   'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=10297&indice=1&totalRegistros=1'))
                                             },
-                                        image:
-                                            'assets/images/estatuto64.png'),
-                                            AvisosNreComponent(
+                                        image: 'assets/images/estatuto64.png'),
+                                    AvisosNreComponent(
                                         label: "PRconsig",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Consignacao-em-Folha-de-Pagamento'))
                                             },
-                                        image:
-                                            'assets/images/prconsig64.png'),
+                                        image: 'assets/images/prconsig64.png'),
                                   ],
                                 ),
                               ),
@@ -873,14 +871,14 @@ class _Apucarana_recursos_humanosState
                                     color: Colors.black),
                                 Column(
                                   children: [
-                                    const Padding(
+                                    Padding(
                                       padding: EdgeInsets.only(top: 12.0),
                                       child: Text(
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

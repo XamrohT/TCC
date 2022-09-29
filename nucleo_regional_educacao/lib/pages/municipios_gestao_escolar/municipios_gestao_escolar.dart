@@ -12,8 +12,7 @@ class Apucarana_gestao_escolar extends StatefulWidget {
       _Apucarana_gestao_escolarState();
 }
 
-class _Apucarana_gestao_escolarState
-    extends State<Apucarana_gestao_escolar> {
+class _Apucarana_gestao_escolarState extends State<Apucarana_gestao_escolar> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -107,7 +106,7 @@ class _Apucarana_gestao_escolarState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +194,14 @@ class _Apucarana_gestao_escolarState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -295,7 +295,8 @@ class _Apucarana_gestao_escolarState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text('Maria dos Anjos Grangeiro da Silva | marianjos@seed.pr.gov.br | (43) 3420-1653'),
+                                child: Text(
+                                    'Maria dos Anjos Grangeiro da Silva | marianjos@seed.pr.gov.br | (43) 3420-1653'),
                               ),
                             ),
                             const Divider(),
@@ -311,12 +312,12 @@ class _Apucarana_gestao_escolarState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Instâncias Colegiadas",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
@@ -330,8 +331,7 @@ class _Apucarana_gestao_escolarState
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=273'))
                                             },
-                                        image:
-                                            'assets/images/otp64.png'),
+                                        image: 'assets/images/otp64.png'),
                                   ],
                                 ),
                               ),
@@ -502,7 +502,7 @@ class _Apucarana_gestao_escolarState
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

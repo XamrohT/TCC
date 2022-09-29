@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                       child: Text('Eleições 2022',
-                          style: TextStyle(color: Colors.orange,fontSize: 12)),
+                          style: TextStyle(color: Colors.orange, fontSize: 12)),
                     ),
                   ),
                 ],

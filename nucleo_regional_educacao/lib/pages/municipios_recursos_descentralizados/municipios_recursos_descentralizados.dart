@@ -107,7 +107,7 @@ class _Apucarana_recursos_descentralizadosState
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -195,13 +195,14 @@ class _Apucarana_recursos_descentralizadosState
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -294,8 +295,7 @@ class _Apucarana_recursos_descentralizadosState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'APMF'),
+                                child: Text('APMF'),
                               ),
                             ),
                             const Expanded(
@@ -310,8 +310,7 @@ class _Apucarana_recursos_descentralizadosState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Analista'),
+                                child: Text('Analista'),
                               ),
                             ),
                             const Expanded(
@@ -326,8 +325,7 @@ class _Apucarana_recursos_descentralizadosState
                               flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
-                                child: Text(
-                                    'Serviços Contínuos'),
+                                child: Text('Serviços Contínuos'),
                               ),
                             ),
                             const Expanded(
@@ -351,19 +349,18 @@ class _Apucarana_recursos_descentralizadosState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 5.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 5.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                     AvisosNreComponent(
+                                    AvisosNreComponent(
                                         label: "Financeiro",
                                         onTapped: () => {
                                               launchUrl(Uri.parse(
                                                   'http://www.gestaoescolar.diaadia.pr.gov.br/modules/conteudo/conteudo.php?conteudo=170'))
                                             },
-                                        image:
-                                            'assets/images/financeiro.png'),
+                                        image: 'assets/images/financeiro.png'),
                                     AvisosNreComponent(
                                         label: "Fundo Rotativo",
                                         onTapped: () => {
@@ -534,14 +531,14 @@ class _Apucarana_recursos_descentralizadosState
                                     color: Colors.black),
                                 Column(
                                   children: [
-                                    const Padding(
+                                    Padding(
                                       padding: EdgeInsets.only(top: 12.0),
                                       child: Text(
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

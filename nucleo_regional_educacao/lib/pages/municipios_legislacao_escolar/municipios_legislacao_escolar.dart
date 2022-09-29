@@ -8,10 +8,12 @@ class Apucarana_Legislacao_escolar extends StatefulWidget {
   const Apucarana_Legislacao_escolar({Key? key}) : super(key: key);
 
   @override
-  _Apucarana_Legislacao_escolarState createState() => _Apucarana_Legislacao_escolarState();
+  _Apucarana_Legislacao_escolarState createState() =>
+      _Apucarana_Legislacao_escolarState();
 }
 
-class _Apucarana_Legislacao_escolarState extends State<Apucarana_Legislacao_escolar> {
+class _Apucarana_Legislacao_escolarState
+    extends State<Apucarana_Legislacao_escolar> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -105,7 +107,7 @@ class _Apucarana_Legislacao_escolarState extends State<Apucarana_Legislacao_esco
                         width: MediaQuery.of(context).size.width > 600
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 6.0,
+                        // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
                           children: [
                             Padding(
@@ -193,13 +195,14 @@ class _Apucarana_Legislacao_escolarState extends State<Apucarana_Legislacao_esco
                       width: MediaQuery.of(context).size.width > 600
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 10.0,
+                      // height: MediaQuery.of(context).size.height / 10.0,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           AvisosNreComponent(
                               label: "Institucional",
-                              onTapped: () => {Navigator.pop(context)},
+                              onTapped: () =>
+                                  {Navigator.pushNamed(context, '/apucarana')},
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
@@ -234,10 +237,9 @@ class _Apucarana_Legislacao_escolarState extends State<Apucarana_Legislacao_esco
                                 child: Text("LEGISLAÇÃO ESCOLAR",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                            0.02)),
+                                        fontSize:
+                                            MediaQuery.of(context).size.height *
+                                                0.02)),
                               ),
                             ),
                             const Padding(
@@ -263,7 +265,8 @@ class _Apucarana_Legislacao_escolarState extends State<Apucarana_Legislacao_esco
                             ),
                             const Padding(
                               padding: EdgeInsets.all(8),
-                              child: Text('Rosana Henrique Benevenuto | rosana.esgote@escola.pr.gov.br | (43) 3420-1616'),
+                              child: Text(
+                                  'Rosana Henrique Benevenuto | rosana.esgote@escola.pr.gov.br | (43) 3420-1616'),
                             ),
                             const Expanded(
                               flex: 0,
@@ -275,7 +278,8 @@ class _Apucarana_Legislacao_escolarState extends State<Apucarana_Legislacao_esco
                             ),
                             const Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text('Lenite de Fatima Félix | lenite.felix@escola.pr.gov.br | (43) 3420-1615'),
+                              child: Text(
+                                  'Lenite de Fatima Félix | lenite.felix@escola.pr.gov.br | (43) 3420-1615'),
                             ),
                             const Divider(),
                           ],
@@ -443,7 +447,7 @@ class _Apucarana_Legislacao_escolarState extends State<Apucarana_Legislacao_esco
                                               fontWeight: FontWeight.bold),
                                           "instituto Paranaense de Desenvolvimento \n"),
                                     ),
-                                    const Text(
+                                    Text(
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                         "Educacional Fundepar"),

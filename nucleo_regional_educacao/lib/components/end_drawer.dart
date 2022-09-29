@@ -57,11 +57,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page1);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Colégios e Escolas'),
             onTap: () {
               Navigator.pushNamed(context, widget.page2);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Documentação Escolar'),
@@ -69,11 +79,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page3);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Edificações Escolares'),
             onTap: () async {
               Navigator.pushNamed(context, widget.page4);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Educação Básica'),
@@ -81,11 +101,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page5);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Estrutura e Funcionamento'),
             onTap: () {
               Navigator.pushNamed(context, widget.page6);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Formação'),
@@ -93,11 +123,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page7);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Gestão Escolar'),
             onTap: () {
               Navigator.pushNamed(context, widget.page8);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Legislação Escolar'),
@@ -105,11 +145,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page9);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Logística'),
             onTap: () {
               Navigator.pushNamed(context, widget.page10);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Ouvidoria'),
@@ -117,11 +167,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page11);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Protocolo'),
             onTap: () {
               Navigator.pushNamed(context, widget.page12);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Recursos Descentralizados'),
@@ -129,11 +189,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page13);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Recursos Humanos'),
             onTap: () {
               Navigator.pushNamed(context, widget.page14);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Registro Escolar'),
@@ -141,11 +211,21 @@ class _EndDrawerState extends State<EndDrawer> {
               Navigator.pushNamed(context, widget.page15);
             },
           ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
           ListTile(
             title: const Text('Tecnologia Educacional'),
             onTap: () {
               Navigator.pushNamed(context, widget.page16);
             },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
           ),
           ListTile(
             title: const Text('Telefones'),
