@@ -336,7 +336,7 @@ class _ApucaranaState extends State<Apucarana> {
                                             600
                                         ? Row(
                                             mainAxisAlignment:
-                                                MainAxisAlignment.start,
+                                                MainAxisAlignment.center,
                                             children: [
                                               Column(
                                                 children: [

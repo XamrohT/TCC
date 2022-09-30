@@ -353,7 +353,7 @@ class _Apucarana_edificacoes_escolaresState
                     child: Container(
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   children: [

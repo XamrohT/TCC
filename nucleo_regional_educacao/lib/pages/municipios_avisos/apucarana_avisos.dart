@@ -117,8 +117,10 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                             image: 'assets/images/icon_informativos.png'),
                         AvisosNreComponent(
                             label: "Noticias",
-                            onTapped: () => {  Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_noticias')},
+                            onTapped: () => {
+                                  Navigator.pushNamed(
+                                      context, '/apucarana/apucarana_noticias')
+                                },
                             image: 'assets/images/icon_noticias.png'),
                       ]),
                 ),
@@ -133,6 +135,9 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                         children: [
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.60,
+                            width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                             child: ListView.separated(
                               itemCount: 40,
                               itemBuilder: (BuildContext context, int index) {
@@ -159,7 +164,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                       child: Container(
                         child: MediaQuery.of(context).size.width > 600
                             ? Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Column(
                                     children: [

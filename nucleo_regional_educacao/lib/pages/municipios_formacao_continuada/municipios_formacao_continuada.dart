@@ -364,7 +364,7 @@ class _Apucarana_formacao_continuadaState
                     child: Container(
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   children: [

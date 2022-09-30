@@ -172,6 +172,9 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
                         children: [
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.60,
+                            width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                             child: ListView.separated(
                               itemCount: concursosDisponiveis.length,
                               itemBuilder: (BuildContext context, int index) {
@@ -199,7 +202,7 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
                       child: Container(
                         child: MediaQuery.of(context).size.width > 600
                             ? Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Column(
                                     children: [

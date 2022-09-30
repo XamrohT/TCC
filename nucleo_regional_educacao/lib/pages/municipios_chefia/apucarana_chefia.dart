@@ -204,13 +204,17 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
-                              onTapped: () => {Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_avisos')},
+                              onTapped: () => {
+                                    Navigator.pushNamed(
+                                        context, '/apucarana/apucarana_avisos')
+                                  },
                               image: 'assets/images/icon_informativos.png'),
                           AvisosNreComponent(
                               label: "Noticias",
-                              onTapped: () => {  Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_noticias')},
+                              onTapped: () => {
+                                    Navigator.pushNamed(context,
+                                        '/apucarana/apucarana_noticias')
+                                  },
                               image: 'assets/images/icon_noticias.png'),
                         ],
                       ),
@@ -222,34 +226,36 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                       topLeft: Radius.circular(40.0),
                       topRight: Radius.circular(40.0),
                     ),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width > 600
-                          ? MediaQuery.of(context).size.width * 0.5
-                          : MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      child: ClipRect(
-                        child: ListView(
-                          shrinkWrap: true,
+                    child: SingleChildScrollView(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width > 600
+                            ? MediaQuery.of(context).size.width * 0.5
+                            : MediaQuery.of(context).size.width,
+                        //height: MediaQuery.of(context).size.height,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(top: 24.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Center(
-                                    child: Text("CHEFIA",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.02)),
-                                  ),
-                                ],
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Center(
+                                      child: Text("CHEFIA",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.02)),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                             Row(
-                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -257,6 +263,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(24)),
                                     child: Image.asset(
+                                        
                                         'assets/images/apucarana_chefe.png',
                                         fit: BoxFit.contain),
                                   ),
@@ -338,6 +345,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                               ),
                             ),
                             const Expanded(
+                              flex: 0,
                               child: Padding(
                                 padding: EdgeInsets.all(8),
                                 child: Text(
@@ -355,7 +363,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                     child: Container(
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   children: [

@@ -349,7 +349,7 @@ class _Apucarana_gestao_escolarState extends State<Apucarana_gestao_escolar> {
                     child: Container(
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   children: [

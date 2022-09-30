@@ -380,7 +380,7 @@ class _Apucarana_tecnologia_educacionalState
                     child: Container(
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   children: [

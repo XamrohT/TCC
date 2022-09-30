@@ -307,6 +307,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -319,38 +322,55 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: apucaranaEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    apucaranaEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: Container(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.7,
+                                              child: Column(
+                                                children: [
+                                                  Text('Escolas de Apucarana'),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      shrinkWrap: true,
+                                                      itemCount: apucaranaEscola
+                                                          .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            apucaranaEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -362,6 +382,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -374,38 +397,53 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: arapongasEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    arapongasEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text('Escolas de Arapongas'),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount: arapongasEscola
+                                                          .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            arapongasEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -417,6 +455,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -429,39 +470,55 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  bomSucessoEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    bomSucessoEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                      "Escolas de Bom Sucesso"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          bomSucessoEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            bomSucessoEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -473,6 +530,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -485,39 +545,55 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  borrazopolisEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    borrazopolisEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                      "Escolas de Borrazopolis"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          borrazopolisEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            borrazopolisEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -529,6 +605,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -541,39 +620,54 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  californiaEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    californiaEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text("Escolas de California"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          californiaEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            californiaEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -585,6 +679,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -597,38 +694,53 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: cambiraEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    cambiraEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text("Escolas de Cambira"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          cambiraEscola.length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            cambiraEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -640,6 +752,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -652,39 +767,55 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  cruzmaltinaEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    cruzmaltinaEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                      "Escolas de Cruzmaltina"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          cruzmaltinaEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            cruzmaltinaEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -696,6 +827,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -708,38 +842,53 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: faxinalEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    faxinalEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text("Escolas de Faxinal"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          faxinalEscola.length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            faxinalEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -751,6 +900,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -763,39 +915,55 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  jandaiaDoSulEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    jandaiaDoSulEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                      "Escolas de Jandaia do Sul"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          jandaiaDoSulEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            jandaiaDoSulEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -807,50 +975,67 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12)),
                                 child: ListTile(
-                                  title: const Text('Kalore',
+                                  title: const Text('Kaloré',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold)),
                                   onTap: () {
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: kaloreEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    kaloreEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text("Escolas de Kaloré"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          kaloreEscola.length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            kaloreEscola[index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -862,52 +1047,70 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12)),
                                 child: ListTile(
-                                  title: const Text('Marilandia do Sul',
+                                  title: const Text('Marilândia do Sul',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold)),
                                   onTap: () {
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  marilandiaDoSulEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    marilandiaDoSulEscola[
-                                                        index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                      "Escolas de Marilândia do sul"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          marilandiaDoSulEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            marilandiaDoSulEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -919,6 +1122,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -931,38 +1137,53 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: marumbiEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    marumbiEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text("Escolas de Marumbi"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          marumbiEscola.length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            marumbiEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -974,51 +1195,70 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12)),
                                 child: ListTile(
-                                  title: const Text('Maua da Serra',
+                                  title: const Text('Mauá da Serra',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold)),
                                   onTap: () {
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  mauaDaSerraEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    mauaDaSerraEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                      "Escolas de Mauá da Serra"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          mauaDaSerraEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            mauaDaSerraEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -1030,6 +1270,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1042,39 +1285,55 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount:
-                                                  novoItacolomiEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    novoItacolomiEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                      "Escolas de Novo Itacolomi"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          novoItacolomiEscola
+                                                              .length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            novoItacolomiEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -1086,6 +1345,9 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1098,38 +1360,52 @@ class _Apucarana_colegios_escolasState
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: rioBomEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    rioBomEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text("Escolas de Rio Bom"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          rioBomEscola.length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            rioBomEscola[index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -1141,50 +1417,68 @@ class _Apucarana_colegios_escolasState
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              width: MediaQuery.of(context).size.width > 600
+                                ? MediaQuery.of(context).size.width * 0.7
+                                : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(12)),
                                 child: ListTile(
-                                  title: const Text('Sabaudia',
+                                  title: const Text('Sabáudia',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold)),
                                   onTap: () {
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width >
-                                                    600
-                                                ? MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.5
-                                                : MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                            child: ListView.separated(
-                                              itemCount: sabaudiaEscola.length,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                final escola =
-                                                    sabaudiaEscola[index];
-                                                return EscolaCardComponent(
-                                                  titulo: escola.nome,
-                                                  link: escola.url,
-                                                );
-                                              },
-                                              separatorBuilder:
-                                                  (BuildContext context,
-                                                          int index) =>
-                                                      const Divider(),
+                                          return AlertDialog(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                  20.0,
+                                                ),
+                                              ),
+                                            ),
+                                            content: SizedBox(
+                                              height: 300,
+                                              width: MediaQuery.of(context)
+                                                          .size
+                                                          .width >
+                                                      600
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              child: Column(
+                                                children: [
+                                                  Text("Escolas de Sabáudia"),
+                                                  Expanded(
+                                                    child: ListView.separated(
+                                                      itemCount:
+                                                          sabaudiaEscola.length,
+                                                      itemBuilder:
+                                                          (BuildContext context,
+                                                              int index) {
+                                                        final escola =
+                                                            sabaudiaEscola[
+                                                                index];
+                                                        return EscolaCardComponent(
+                                                          titulo: escola.nome,
+                                                          link: escola.url,
+                                                        );
+                                                      },
+                                                      separatorBuilder:
+                                                          (BuildContext context,
+                                                                  int index) =>
+                                                              const Divider(),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           );
                                         });
@@ -1207,7 +1501,7 @@ class _Apucarana_colegios_escolasState
                         child: Container(
                           child: MediaQuery.of(context).size.width > 600
                               ? Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Column(
                                       children: [
@@ -1409,7 +1703,7 @@ class _Apucarana_colegios_escolasState
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

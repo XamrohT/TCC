@@ -118,6 +118,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                                             0.02),
                               ),
                             ),
+                            
                             Padding(
                               padding: const EdgeInsets.fromLTRB(4, 8, 10, 0),
                               child: Row(
@@ -243,12 +244,14 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                                                 0.02)),
                               ),
                             ),
+                            
                             const Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text('Missão/Sobre',
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             ),
+                            
                             const Expanded(
                               flex: 0,
                               child: Padding(
@@ -502,7 +505,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                     child: Container(
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   children: [

@@ -307,8 +307,8 @@ class _Apucarana_documentacao_escolarState
                                 width: MediaQuery.of(context).size.width > 600
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
-                                height:
-                                    MediaQuery.of(context).size.height / 7.0,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 7.0,
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -350,7 +350,7 @@ class _Apucarana_documentacao_escolarState
                     child: Container(
                       child: MediaQuery.of(context).size.width > 600
                           ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   children: [
