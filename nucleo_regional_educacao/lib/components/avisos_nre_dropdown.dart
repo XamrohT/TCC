@@ -38,7 +38,9 @@ class _AvisosNreDropdownState extends State<AvisosNreDropdown> {
                 dropdownValue = value!;
               });
               if (value == 'Apucarana') {
+                value = 'Selecione um núcleo';
                 Navigator.pushNamed(context, '/apucarana');
+              } else if (value == 'Selecione um núcleo') {
               } else {
                 return showDialog(
                   context: context,

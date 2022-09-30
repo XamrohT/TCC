@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/Drawer.dart';
+import 'package:nucleo_regional_educacao/components/drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
 import 'package:nucleo_regional_educacao/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -206,11 +206,13 @@ class _Apucarana_recursos_humanosState
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
-                              onTapped: () => {print("Institucional")},
+                              onTapped: () => {Navigator.pushNamed(context,
+                                              '/apucarana/apucarana_avisos')},
                               image: 'assets/images/icon_informativos.png'),
                           AvisosNreComponent(
                               label: "Noticias",
-                              onTapped: () => {print("Institucional")},
+                              onTapped: () => {Navigator.pushNamed(context,
+                                              '/apucarana/apucarana_noticias')},
                               image: 'assets/images/icon_noticias.png'),
                         ],
                       ),

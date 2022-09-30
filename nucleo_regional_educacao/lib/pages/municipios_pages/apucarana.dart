@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/Drawer.dart';
+import 'package:nucleo_regional_educacao/components/drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
 import 'package:nucleo_regional_educacao/components/custom_pop_up_menu.dart';
 import 'package:nucleo_regional_educacao/components/end_drawer.dart';
@@ -15,10 +15,10 @@ class Apucarana extends StatefulWidget {
 class _ApucaranaState extends State<Apucarana> {
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return SafeArea(
       child: Scaffold(
-        key: _scaffoldKey,
+        key: scaffoldKey,
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -41,7 +41,7 @@ class _ApucaranaState extends State<Apucarana> {
                                   color: Colors.black,
                                 ),
                                 onPressed: () {
-                                  _scaffoldKey.currentState?.openDrawer();
+                                  scaffoldKey.currentState?.openDrawer();
                                 },
                               ),
                             ),
@@ -67,7 +67,7 @@ class _ApucaranaState extends State<Apucarana> {
                                   color: Colors.black,
                                 ),
                                 onPressed: () {
-                                  _scaffoldKey.currentState?.openEndDrawer();
+                                  scaffoldKey.currentState?.openEndDrawer();
                                 },
                               ),
                             ),
@@ -205,7 +205,10 @@ class _ApucaranaState extends State<Apucarana> {
                                         'assets/images/icon_informativos.png'),
                                 AvisosNreComponent(
                                     label: "Noticias",
-                                    onTapped: () => {print("noticias")},
+                                    onTapped: () => {
+                                          Navigator.pushNamed(context,
+                                              '/apucarana/apucarana_noticias')
+                                        },
                                     image: 'assets/images/icon_noticias.png'),
                               ]),
                         ),
@@ -235,8 +238,8 @@ class _ApucaranaState extends State<Apucarana> {
                                 padding: const EdgeInsets.only(top: 24.0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text("INSTITUCIONAL"),
+                                  children: const [
+                                    Text("INSTITUCIONAL"),
                                   ],
                                 ),
                               ),
@@ -267,8 +270,8 @@ class _ApucaranaState extends State<Apucarana> {
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Expanded(
+                                children: const [
+                                  Expanded(
                                     child: Padding(
                                       padding: EdgeInsets.only(top: 12.0),
                                       child: Text(
@@ -277,28 +280,46 @@ class _ApucaranaState extends State<Apucarana> {
                                   ),
                                 ],
                               ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(4.0, 20, 4, 0),
-                                child: Center(
-                                  child: Container(
-                                    height:
-                                        MediaQuery.of(context).size.height / 4,
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(12)),
-                                      image: DecorationImage(
-                                        fit: BoxFit.contain,
-                                        image: AssetImage(
-                                            'assets/images/apucarana_fachada.jpg'),
-                                      ),
-                                    ),
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(24)),
+                                    child: Image.asset(
+                                      
+                                        'assets/images/apucarana_fachada.jpg',
+                                        width: MediaQuery.of(context).size.width/1.3,
+                                        
+                                        fit: BoxFit.contain),
                                   ),
                                 ),
                               ),
+                              // Padding(
+                              //   padding:
+                              //       const EdgeInsets.fromLTRB(4.0, 20, 4, 0),
+                              //   child: Center(
+                              //     child: ClipRRect(
+                              //       borderRadius:
+                              //               BorderRadius.all(Radius.circular(12)),
+                              //                                         child: Container(
+                              //         height:
+                              //             MediaQuery.of(context).size.height / 4,
+                              //         width: MediaQuery.of(context).size.width,
+                              //         decoration: BoxDecoration(
+
+                              //           image: DecorationImage(
+                              //             fit: BoxFit.contain,
+                              //             image: AssetImage(
+                              //                 'assets/images/apucarana_fachada.jpg'),
+                              //           ),
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 20.0),
+                                padding: const EdgeInsets.fromLTRB(8, 20.0,8,0),
                                 child: Container(
                                   color: Colors.grey[300],
                                   child: const Text(

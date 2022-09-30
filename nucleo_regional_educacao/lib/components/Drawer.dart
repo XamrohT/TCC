@@ -18,13 +18,13 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            child: Text(''),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/Brasao_do_parana.png',),
+                image: AssetImage('assets/images/Brasao_do_Parana.png',),
                 fit: BoxFit.contain,
               ),
             ),
+            child: Text(''),
           ),
           ListTile(
             title: const Text('Pagina Inicial'),
@@ -83,7 +83,6 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
                   mode: LaunchMode.externalApplication,
                 );
               } catch (err) {
-                debugPrint('Something went wrong');
               }
             },
           ),

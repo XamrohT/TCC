@@ -2,43 +2,69 @@ import 'package:flutter/material.dart';
 import 'package:nucleo_regional_educacao/components/drawer.dart';
 import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
 import 'package:nucleo_regional_educacao/components/card.dart';
+import 'package:nucleo_regional_educacao/shared_Data/model/concurso_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:url_launcher/url_launcher.dart';
 // ignore: depend_on_referenced_packages
 import 'package:web_scraper/web_scraper.dart';
 
-class Apucarana_avisos extends StatefulWidget {
+class Apucarana_noticias extends StatefulWidget {
   @override
-  _Apucarana_avisosState createState() => _Apucarana_avisosState();
+  _Apucarana_noticiasState createState() => _Apucarana_noticiasState();
 }
 
-class _Apucarana_avisosState extends State<Apucarana_avisos> {
+class _Apucarana_noticiasState extends State<Apucarana_noticias> {
   final webScraper = WebScraper('https://www.nre.seed.pr.gov.br');
 
+  List<Concurso> concursosDisponiveis = [];
   List<String> elementsTitle = [];
   List<String> elementsDate = [];
   List<String> elementsLink = [];
   List<Map<String, dynamic>>? search;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isSearching = false;
+  String searchText = "";
+  final TextEditingController _controller = new TextEditingController();
 
   void fetchProducts() async {
     final webScraper = WebScraper('https://www.nre.seed.pr.gov.br');
-    print('entrou aqui');
 
     if (await webScraper
         .loadWebPage('/modules/qas/categoria.php?cod_categoria=3')) {
-      print("falhou?");
       search = webScraper.getElement(
           'div.blockContent > table > tbody > tr > td > a', ['href']);
+      search?.forEach((element) {});
+
       for (int i = 1; i <= search!.length - 1; i += 2) {
         elementsTitle.add('${search![i]['title']}');
         elementsLink.add('${search![i]['attributes']['href']}');
+        elementsTitle.forEach((element) {});
       }
       for (int i = 0; i <= search!.length; i += 2) {
         elementsDate.add('${search![i]['title']}');
       }
+      for (int i = 0; i < elementsTitle.length; i++) {
+        concursosDisponiveis
+            .add(Concurso(elementsTitle[i], elementsDate[i], elementsLink[i]));
+      }
       setState(() {});
     }
+  }
+
+  _InvitesListState() {
+    _controller.addListener(() {
+      if (_controller.text.isEmpty) {
+        setState(() {
+          isSearching = false;
+          searchText = "";
+        });
+      } else {
+        setState(() {
+          isSearching = true;
+          searchText = _controller.text;
+        });
+      }
+    });
   }
 
   @override
@@ -113,14 +139,27 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                             image: 'assets/images/icon_institucional.png'),
                         AvisosNreComponent(
                             label: "Avisos",
-                            onTapped: () => {snackBar()},
+                            onTapped: () => {Navigator.pushNamed(context, '/apucarana/apucarana_avisos')},
                             image: 'assets/images/icon_informativos.png'),
                         AvisosNreComponent(
                             label: "Noticias",
-                            onTapped: () => {  Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_noticias')},
+                            onTapped: () => {snackBar()},
                             image: 'assets/images/icon_noticias.png'),
                       ]),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                child: TextField(
+                  controller: _controller,
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.search),
+                    hintText: 'Buscar Concursos',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(color: Colors.blue)),
+                  ),
+                  onChanged: searchConcursos,
                 ),
               ),
               SafeArea(
@@ -134,12 +173,13 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.60,
                             child: ListView.separated(
-                              itemCount: 40,
+                              itemCount: concursosDisponiveis.length,
                               itemBuilder: (BuildContext context, int index) {
+                                final concurso = concursosDisponiveis[index];
                                 return CardComponent(
-                                  data: elementsDate[index],
-                                  titulo: elementsTitle[index],
-                                  link: elementsLink[index],
+                                  data: concurso.data,
+                                  titulo: concurso.titulo,
+                                  link: concurso.url,
                                 );
                               },
                               separatorBuilder:
@@ -384,5 +424,27 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
     // Find the ScaffoldMessenger in the widget tree
     // and use it to show a SnackBar.
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void searchConcursos(String query) {
+    final suggestions = concursosDisponiveis.where((element) {
+      final titulo = element.titulo.toLowerCase();
+      final input = query.toLowerCase();
+      return titulo.contains(input);
+    }).toList();
+
+    setState(() {
+      
+      concursosDisponiveis = suggestions;
+    });
+    if (query == "") {
+        for (int i = 0; i < elementsTitle.length; i++) {
+          concursosDisponiveis.add(
+              Concurso(elementsTitle[i], elementsDate[i], elementsLink[i]));
+        }
+      }
+    setState(() {
+      
+    });
   }
 }

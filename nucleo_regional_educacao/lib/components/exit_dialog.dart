@@ -24,6 +24,13 @@ class ExitConfirmationDialog extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12))),
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Image.asset(
@@ -32,13 +39,6 @@ class ExitConfirmationDialog extends StatelessWidget {
                   width: 120,
                 ),
               ),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      topRight: Radius.circular(12))),
             ),
             SizedBox(
               height: 24,
@@ -73,15 +73,15 @@ class ExitConfirmationDialog extends StatelessWidget {
                   onPressed: () {
                     return Navigator.of(context).pop(true);
                   },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
                   child: Text(
                     'ok',
                     style: TextStyle(
                       color: Colors.black,
                     ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
                   ),
                 )
               ],

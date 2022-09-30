@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nucleo_regional_educacao/components/custom_procura_card.dart';
 import 'package:nucleo_regional_educacao/shared_Data/procura_card_values.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:web_scraper/web_scraper.dart';
 
 class CustomPopUp extends StatefulWidget {
   const CustomPopUp({Key? key}) : super(key: key);
@@ -19,7 +16,7 @@ class _CustomPopUpState extends State<CustomPopUp> {
 
   @override
   Widget build(BuildContext context) {
-    String _selectedMenu = '';
+    String selectedMenu = '';
     return AlertDialog(
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
@@ -35,7 +32,7 @@ class _CustomPopUpState extends State<CustomPopUp> {
         "O que você procura?",
         style: TextStyle(fontSize: 24.0),
       ),
-      content: Container(
+      content: SizedBox(
         height: 400,
         width: MediaQuery.of(context).size.width > 600
             ? MediaQuery.of(context).size.width * 0.7

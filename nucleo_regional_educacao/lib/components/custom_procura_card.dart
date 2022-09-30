@@ -30,7 +30,7 @@ class _ProcuraCardComponentState extends State<ProcuraCardComponent> {
           elevation: 4,
           shadowColor: secondColor,
           color: Colors.white,
-          child: Container(
+          child: SizedBox(
             height: 50,
             width: 100,
             child: Column(

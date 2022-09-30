@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucleo_regional_educacao/pages/home_page.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_avisos/apucarana_avisos.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_chefia/apucarana_chefia.dart';
+import 'package:nucleo_regional_educacao/pages/municipios_colegios_escolas/apucarana_colegios_escolas.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_documentacao_escolar/municipios_documentacao_escolar.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_educacao/municipios_educacao.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_estrutura/municipios_estrutura.dart';
@@ -9,6 +10,7 @@ import 'package:nucleo_regional_educacao/pages/municipios_formacao_continuada/mu
 import 'package:nucleo_regional_educacao/pages/municipios_gestao_escolar/municipios_gestao_escolar.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_legislacao_escolar/municipios_legislacao_escolar.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_logistica/municipios_logistica.dart';
+import 'package:nucleo_regional_educacao/pages/municipios_noticias/apucarana_noticias.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_ouvidoria/municipios_ouvidoria.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_pages/apucarana.dart';
 import 'package:nucleo_regional_educacao/pages/municipios_protocolo/municipios_protocolo.dart';
@@ -36,8 +38,9 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/apucarana': (context) => const Apucarana(),
         '/apucarana/apucarana_avisos': (context) => Apucarana_avisos(),
+        '/apucarana/apucarana_noticias': (context) => Apucarana_noticias(),
         '/apucarana/apucarana_chefia': (context) => const Apucarana_chefia(),
-        '/apucarana/apucarana_colegios_e_escolas': (context) => Apucarana_avisos(),
+        '/apucarana/apucarana_colegios_e_escolas': (context) => Apucarana_colegios_escolas(),
         '/apucarana/apucarana_documentacao_escolar': (context) => const Apucarana_documentacao_escolar(),
         '/apucarana/apucarana_edificacoes_escolares': (context) => const Apucarana_edificacoes_escolares(),
         '/apucarana/apucarana_educacao': (context) => Apucarana_educacao(),
