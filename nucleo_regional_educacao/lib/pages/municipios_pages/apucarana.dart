@@ -176,44 +176,37 @@ class _ApucaranaState extends State<Apucarana> {
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(8, 24, 8, 0),
-                      child: Material(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(40.0),
-                          topRight: Radius.circular(40.0),
-                        ),
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
-                              ? MediaQuery.of(context).size.width * 0.7
-                              : MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height / 9.0,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                AvisosNreComponent(
-                                    label: "Institucional",
-                                    onTapped: () => {snackBar()},
-                                    image:
-                                        'assets/images/icon_institucional.png'),
-                                AvisosNreComponent(
-                                    label: "Avisos",
-                                    onTapped: () => {
-                                          Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_avisos')
-                                        },
-                                    image:
-                                        'assets/images/icon_informativos.png'),
-                                AvisosNreComponent(
-                                    label: "Noticias",
-                                    onTapped: () => {
-                                          Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_noticias')
-                                        },
-                                    image: 'assets/images/icon_noticias.png'),
-                              ]),
-                        ),
-                      ),
-                    ),
+                padding: const EdgeInsets.fromLTRB(4, 24, 0, 8),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadiusGeometry.lerp(
+                        BorderRadius.circular(10),
+                        BorderRadius.circular(10),
+                        5),
+                  ),
+                  width: MediaQuery.of(context).size.width > 600
+                      ? MediaQuery.of(context).size.width * 0.7
+                      : MediaQuery.of(context).size.width,
+                  // height: MediaQuery.of(context).size.height / 10.0,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AvisosNreComponent(
+                            label: "Institucional",
+                            onTapped: () =>
+                                {Navigator.pushNamed(context, '/apucarana')},
+                            image: 'assets/images/icon_institucional.png'),
+                        AvisosNreComponent(
+                            label: "Avisos",
+                            onTapped: () => {Navigator.pushNamed(context, '/apucarana/apucarana_avisos')},
+                            image: 'assets/images/icon_informativos.png'),
+                        AvisosNreComponent(
+                            label: "Noticias",
+                            onTapped: () => {snackBar()},
+                            image: 'assets/images/icon_noticias.png'),
+                      ]),
+                ),
+              ),
                   ],
                 ),
                 Column(

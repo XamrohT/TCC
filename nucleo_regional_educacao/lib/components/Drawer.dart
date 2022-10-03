@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:nucleo_regional_educacao/components/grid_image_nre_component.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_scraper/web_scraper.dart';
 
@@ -20,7 +21,9 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
           DrawerHeader(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/Brasao_do_Parana.png',),
+                image: AssetImage(
+                  'assets/images/Brasao_do_Parana.png',
+                ),
                 fit: BoxFit.contain,
               ),
             ),
@@ -82,8 +85,7 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
                       'https://www.educacao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2021-11/CALENDARIO_2022.pdf'),
                   mode: LaunchMode.externalApplication,
                 );
-              } catch (err) {
-              }
+              } catch (err) {}
             },
           ),
           Divider(
@@ -119,6 +121,21 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
             title: const Text('Site instituicional Seed-PR'),
             onTap: () {
               launchUrl(Uri.parse("https://www.educacao.pr.gov.br/"));
+            },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
+          ListTile(
+            title: const Text('Informações extras'),
+            onTap: () {
+              showDialog(
+                  builder: (BuildContext context) {
+                    return const GridImagePopUp();
+                  },
+                  context: context);
             },
           ),
           Divider(

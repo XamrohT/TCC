@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nucleo_regional_educacao">
    <application
-        android:label="nucleo_regional_educacao"
+        android:label="Núcleo Regional de Educação"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"

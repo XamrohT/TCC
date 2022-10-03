@@ -15,6 +15,8 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width);
+    print(MediaQuery.of(context).size.height);
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
@@ -263,7 +265,6 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(24)),
                                     child: Image.asset(
-                                        
                                         'assets/images/apucarana_chefe.png',
                                         fit: BoxFit.contain),
                                   ),
@@ -271,21 +272,31 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                 Wrap(
                                   alignment: WrapAlignment.spaceBetween,
                                   direction: Axis.vertical,
-                                  children: const [
+                                  children: [
                                     Padding(
                                       padding: EdgeInsets.all(8.0),
                                       child: Center(
                                         child: Text(
                                           'Vladimir Barbosa da Silva',
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.02),
                                         ),
                                       ),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.all(8.0),
                                       child: Text(
-                                          'Chefe do Núcleo Regional de \nEducação de Apucarana'),
+                                        'Chefe do Núcleo Regional de \nEducação de Apucarana',
+                                        style: TextStyle(
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.02),
+                                      ),
                                     ),
                                   ],
                                 ),
