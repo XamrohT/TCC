@@ -1,7 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/grid_image_nre_component.dart';
+import 'package:nre_tcc_feitep/components/grid_image_nre_component.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_scraper/web_scraper.dart';
 

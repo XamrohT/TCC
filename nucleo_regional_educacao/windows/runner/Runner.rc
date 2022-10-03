@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "nucleo_regional_educacao" "\0"
+            VALUE "FileDescription", "nre_tcc_feitep" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "nucleo_regional_educacao" "\0"
+            VALUE "InternalName", "nre_tcc_feitep" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "nucleo_regional_educacao.exe" "\0"
-            VALUE "ProductName", "nucleo_regional_educacao" "\0"
+            VALUE "OriginalFilename", "nre_tcc_feitep.exe" "\0"
+            VALUE "ProductName", "nre_tcc_feitep" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

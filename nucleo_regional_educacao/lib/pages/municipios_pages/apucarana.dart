@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/drawer.dart';
-import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
-import 'package:nucleo_regional_educacao/components/custom_pop_up_menu.dart';
-import 'package:nucleo_regional_educacao/components/end_drawer.dart';
+import 'package:nre_tcc_feitep/components/drawer.dart';
+import 'package:nre_tcc_feitep/components/avisos_nre_component.dart';
+import 'package:nre_tcc_feitep/components/custom_pop_up_menu.dart';
+import 'package:nre_tcc_feitep/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Apucarana extends StatefulWidget {
@@ -194,7 +194,7 @@ class _ApucaranaState extends State<Apucarana> {
                         AvisosNreComponent(
                             label: "Institucional",
                             onTapped: () =>
-                                {Navigator.pushNamed(context, '/apucarana')},
+                                {snackBar()},
                             image: 'assets/images/icon_institucional.png'),
                         AvisosNreComponent(
                             label: "Avisos",
@@ -202,7 +202,8 @@ class _ApucaranaState extends State<Apucarana> {
                             image: 'assets/images/icon_informativos.png'),
                         AvisosNreComponent(
                             label: "Noticias",
-                            onTapped: () => {snackBar()},
+                            onTapped: () => {Navigator.pushNamed(context, '/apucarana/apucarana_noticias')
+                              },
                             image: 'assets/images/icon_noticias.png'),
                       ]),
                 ),
@@ -598,7 +599,7 @@ class _ApucaranaState extends State<Apucarana> {
         height: 20,
         width: MediaQuery.of(context).size.width,
         child: Center(
-            child: const Text('Você já está localizado na página avisos.')),
+            child: const Text('Você já está localizado na página Institucional.')),
       ),
     );
 

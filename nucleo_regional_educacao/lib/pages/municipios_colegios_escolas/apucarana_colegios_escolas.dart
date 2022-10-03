@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/drawer.dart';
-import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
-import 'package:nucleo_regional_educacao/components/card.dart';
-import 'package:nucleo_regional_educacao/components/end_drawer.dart';
-import 'package:nucleo_regional_educacao/components/escola_card_component.dart';
-import 'package:nucleo_regional_educacao/shared_Data/model/escola_model.dart';
+import 'package:nre_tcc_feitep/components/drawer.dart';
+import 'package:nre_tcc_feitep/components/avisos_nre_component.dart';
+import 'package:nre_tcc_feitep/components/card.dart';
+import 'package:nre_tcc_feitep/components/end_drawer.dart';
+import 'package:nre_tcc_feitep/components/escola_card_component.dart';
+import 'package:nre_tcc_feitep/shared_Data/model/escola_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:url_launcher/url_launcher.dart';
 // ignore: depend_on_referenced_packages
@@ -41,7 +41,6 @@ class _Apucarana_colegios_escolasState
 
   void fetchProducts() async {
     final webScraper = WebScraper('https://www.nre.seed.pr.gov.br');
-    print('entrou aqui');
 
     if (await webScraper
         .loadWebPage('/modules/conteudo/conteudo.php?conteudo=524')) {
@@ -118,7 +117,6 @@ class _Apucarana_colegios_escolasState
         );
       });
       search = webScraper.getElement('#faq-12>  a', ['href']);
-      print(search);
       search!.forEach((element) {
         return marilandiaDoSulEscola.add(
           Escola("${element['title']}", '${element['attributes']['href']}'),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/drawer.dart';
-import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
-import 'package:nucleo_regional_educacao/components/card.dart';
-import 'package:nucleo_regional_educacao/shared_Data/model/concurso_model.dart';
+import 'package:nre_tcc_feitep/components/drawer.dart';
+import 'package:nre_tcc_feitep/components/avisos_nre_component.dart';
+import 'package:nre_tcc_feitep/components/card.dart';
+import 'package:nre_tcc_feitep/shared_Data/model/concurso_model.dart';
 // ignore: depend_on_referenced_packages
 import 'package:url_launcher/url_launcher.dart';
 // ignore: depend_on_referenced_packages
@@ -420,7 +420,7 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
         height: 20,
         width: MediaQuery.of(context).size.width,
         child: Center(
-            child: const Text('Você já está localizado na página avisos.')),
+            child: const Text('Você já está localizado na página noticias.')),
       ),
     );
 

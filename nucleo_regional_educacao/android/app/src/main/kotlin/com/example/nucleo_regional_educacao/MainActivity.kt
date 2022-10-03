@@ -1,4 +1,4 @@
-package com.example.nucleo_regional_educacao
+package com.nre_tcc_feitep
 
 import io.flutter.embedding.android.FlutterActivity
 

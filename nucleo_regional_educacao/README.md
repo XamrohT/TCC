@@ -1,4 +1,4 @@
-# nucleo_regional_educacao
+# nre_tcc_feitep
 
 A new Flutter project.
 

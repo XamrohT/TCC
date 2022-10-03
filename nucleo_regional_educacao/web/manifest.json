@@ -1,6 +1,6 @@
 {
-    "name": "nucleo_regional_educacao",
-    "short_name": "nucleo_regional_educacao",
+    "name": "nre_tcc_feitep",
+    "short_name": "nre_tcc_feitep",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

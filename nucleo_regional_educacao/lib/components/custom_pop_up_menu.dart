@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/custom_procura_card.dart';
-import 'package:nucleo_regional_educacao/shared_Data/procura_card_values.dart';
+import 'package:nre_tcc_feitep/components/custom_procura_card.dart';
+import 'package:nre_tcc_feitep/shared_Data/procura_card_values.dart';
 
 class CustomPopUp extends StatefulWidget {
   const CustomPopUp({Key? key}) : super(key: key);

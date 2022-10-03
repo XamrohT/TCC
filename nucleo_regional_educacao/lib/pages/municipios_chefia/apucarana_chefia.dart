@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/drawer.dart';
-import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
-import 'package:nucleo_regional_educacao/components/end_drawer.dart';
+import 'package:nre_tcc_feitep/components/drawer.dart';
+import 'package:nre_tcc_feitep/components/avisos_nre_component.dart';
+import 'package:nre_tcc_feitep/components/end_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Apucarana_chefia extends StatefulWidget {
@@ -15,8 +15,6 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size.width);
-    print(MediaQuery.of(context).size.height);
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,

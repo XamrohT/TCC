@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/drawer.dart';
-import 'package:nucleo_regional_educacao/components/avisos_nre_dropdown.dart';
+import 'package:nre_tcc_feitep/components/drawer.dart';
+import 'package:nre_tcc_feitep/components/avisos_nre_dropdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
@@ -377,5 +377,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void printinfo() {}
 }

@@ -1,7 +1,7 @@
 // ignore_for_file: unused_import, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/exit_dialog.dart';
+import 'package:nre_tcc_feitep/components/exit_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:web_scraper/web_scraper.dart';
 

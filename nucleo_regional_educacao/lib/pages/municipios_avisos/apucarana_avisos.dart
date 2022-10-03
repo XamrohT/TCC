@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/components/drawer.dart';
-import 'package:nucleo_regional_educacao/components/avisos_nre_component.dart';
-import 'package:nucleo_regional_educacao/components/card.dart';
+import 'package:nre_tcc_feitep/components/drawer.dart';
+import 'package:nre_tcc_feitep/components/avisos_nre_component.dart';
+import 'package:nre_tcc_feitep/components/card.dart';
 // ignore: depend_on_referenced_packages
 import 'package:url_launcher/url_launcher.dart';
 // ignore: depend_on_referenced_packages
@@ -23,11 +23,10 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
 
   void fetchProducts() async {
     final webScraper = WebScraper('https://www.nre.seed.pr.gov.br');
-    print('entrou aqui');
 
     if (await webScraper
         .loadWebPage('/modules/qas/categoria.php?cod_categoria=3')) {
-      print("falhou?");
+  
       search = webScraper.getElement(
           'div.blockContent > table > tbody > tr > td > a', ['href']);
       for (int i = 1; i <= search!.length - 1; i += 2) {

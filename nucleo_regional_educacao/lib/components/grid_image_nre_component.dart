@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nucleo_regional_educacao/shared_Data/grid_image_values.dart';
+import 'package:nre_tcc_feitep/shared_Data/grid_image_values.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GridImagePopUp extends StatefulWidget {
