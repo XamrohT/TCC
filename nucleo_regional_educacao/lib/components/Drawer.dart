@@ -32,8 +32,13 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
           ListTile(
             title: const Text('Pagina Inicial'),
             onTap: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/', (Route<dynamic> route) => false);
+              var route = ModalRoute.of(context);
+              if (route!.settings.name == '/') {
+                snackBar();
+              } else {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/', (Route<dynamic> route) => false);
+              }
             },
           ),
           Divider(
@@ -118,9 +123,20 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
             endIndent: 10,
           ),
           ListTile(
-            title: const Text('Site instituicional Seed-PR'),
+            title: const Text('Recursos Humanos'),
             onTap: () {
-              launchUrl(Uri.parse("https://www.educacao.pr.gov.br/"));
+              launchUrl(Uri.parse("https://www.educacao.pr.gov.br/rh"));
+            },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
+          ListTile(
+            title: const Text('Ouvidoria'),
+            onTap: () {
+              launchUrl(Uri.parse("https://www.educacao.pr.gov.br/Ouvidoria"));
             },
           ),
           Divider(
@@ -146,5 +162,18 @@ class _PersonalizedDrawerState extends State<PersonalizedDrawer> {
         ],
       ),
     );
+  }
+
+  snackBar() {
+    final snackBar = SnackBar(
+      content: SizedBox(
+        height: 20,
+        width: MediaQuery.of(context).size.width,
+        child: Center(
+            child: const Text('Você já está localizado na página inicial.')),
+      ),
+    );
+    Navigator.pop(context);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
