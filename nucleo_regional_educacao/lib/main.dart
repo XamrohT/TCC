@@ -5,6 +5,7 @@ import 'package:nre_tcc_feitep/pages/municipios_avisos/apucarana_avisos.dart';
 import 'package:nre_tcc_feitep/pages/municipios_chefia/apucarana_chefia.dart';
 import 'package:nre_tcc_feitep/pages/municipios_colegios_escolas/apucarana_colegios_escolas.dart';
 import 'package:nre_tcc_feitep/pages/municipios_convocacao_pessoas_negras/apucarana_convocacao_pessoas_negras.dart';
+import 'package:nre_tcc_feitep/pages/municipios_convocacao_pss/apucarana_convocacoes_pss.dart';
 import 'package:nre_tcc_feitep/pages/municipios_documentacao_escolar/municipios_documentacao_escolar.dart';
 import 'package:nre_tcc_feitep/pages/municipios_educacao/municipios_educacao.dart';
 import 'package:nre_tcc_feitep/pages/municipios_estrutura/municipios_estrutura.dart';
@@ -77,6 +78,8 @@ class MyApp extends StatelessWidget {
             const Apucarana_convocacao_pessoas_negras(),
         '/apucarana/apucarana_atribuicao_de_aulas_e_funcoes': (context) =>
             const Apucarana_atribuicao_e_funcoes(),
+            '/apucarana/apucarana_convocao_pss': (context) =>
+            const Apucarana_convocacao_pss(),
       },
     );
   }

@@ -20,7 +20,7 @@ class _AtribuicoesConcocacoesCustomPopUpState
   ];
   List<String> route = [
     '/apucarana/apucarana_convocacao_pessoas_negras',
-    'assets/images/cas_apucarana.png',
+    '/apucarana/apucarana_convocao_pss',
     '/apucarana/apucarana_atribuicao_de_aulas_e_funcoes',
     '',
   ];

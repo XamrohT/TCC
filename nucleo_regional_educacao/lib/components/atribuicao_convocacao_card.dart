@@ -31,7 +31,8 @@ class _AtribuicaoConvocacaoCardComponentState
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
       child: GestureDetector(
         onTap: () => onClick(),
         child: Material(
@@ -47,7 +48,7 @@ class _AtribuicaoConvocacaoCardComponentState
               ),
             ),
             height: 50,
-            // width: 100,
+            width: 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

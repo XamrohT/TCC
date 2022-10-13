@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import, depend_on_referenced_packages
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:nre_tcc_feitep/components/exit_dialog.dart';
 import 'package:nre_tcc_feitep/shared_Data/model/escola_model.dart';
@@ -16,7 +18,7 @@ class CidadesDropdown extends StatefulWidget {
 
 class _CidadesDropdownState extends State<CidadesDropdown> {
   String dropdownValue = "Selecione uma cidade";
-
+  bool loading = true;
   final Uri _url = Uri.parse(
       "https://www.nre.seed.pr.gov.br/modules/conteudo/conteudo.php?conteudo=39");
 
@@ -134,6 +136,33 @@ class _CidadesDropdownState extends State<CidadesDropdown> {
     final webScraper = WebScraper('https://www.nre.seed.pr.gov.br');
     List<Escola> apucaranaConvocacoes = [];
     List<Map<String, dynamic>>? search;
+    Timer? timer;
+    if (loading == true) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            timer = Timer(Duration(seconds: 1), () {
+              Navigator.of(context).pop();
+            });
+            return AlertDialog(
+                content: Container(
+                    height: 300,
+                    alignment: Alignment.topCenter,
+                    margin: EdgeInsets.only(top: 20),
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        value: 0.8,
+                        valueColor:
+                            AlwaysStoppedAnimation<Color>(Colors.purple),
+                      ),
+                    )));
+          }).then((value) => {
+            if (timer!.isActive)
+              {
+                timer!.cancel(),
+              }
+          });
+    }
     if (await webScraper.loadWebPage('$link')) {
       search = webScraper.getElement(
           '#content > div.docum_window > div > div.docum_size80 > div > div.docum_filelist > div > div.docum_filebase > div.docum_filebase_l > a)',
