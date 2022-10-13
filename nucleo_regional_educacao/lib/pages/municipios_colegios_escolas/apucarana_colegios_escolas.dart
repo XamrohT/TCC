@@ -45,11 +45,13 @@ class _Apucarana_colegios_escolasState
     if (await webScraper
         .loadWebPage('/modules/conteudo/conteudo.php?conteudo=524')) {
       search = webScraper.getElement('#faq-1 >  a', ['href']);
-      search!.forEach((element) {
-        return apucaranaEscola.add(
-          Escola("${element['title']}", '${element['attributes']['href']}'),
-        );
-      });
+      search!.forEach(
+        (element) {
+          return apucaranaEscola.add(
+            Escola("${element['title']}", '${element['attributes']['href']}'),
+          );
+        },
+      );
 
       search = webScraper.getElement('#faq-2 >  a', ['href']);
 
@@ -306,8 +308,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -358,7 +360,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Apucarana',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -381,8 +385,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -431,7 +435,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Arapongas',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -454,8 +460,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -506,7 +512,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Bom Sucesso',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -529,8 +537,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -581,7 +589,10 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao:
+                                                              'Borrazopolis',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -604,8 +615,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -655,7 +666,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'California',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -678,8 +691,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -728,7 +741,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Cambira',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -751,8 +766,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -803,7 +818,10 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao:
+                                                              'Cruz Maltina',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -826,8 +844,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -876,7 +894,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Faxinal',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -899,8 +919,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -951,7 +971,10 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao:
+                                                              'Jandaia do Sul',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -974,8 +997,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1023,7 +1046,9 @@ class _Apucarana_colegios_escolasState
                                                             kaloreEscola[index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Kaloré',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -1046,8 +1071,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1098,7 +1123,10 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao:
+                                                              'Marilândia do Sul',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -1121,8 +1149,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1171,7 +1199,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Marumbi',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -1194,8 +1224,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1246,7 +1276,10 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao:
+                                                              'Mauá da Serra',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -1269,8 +1302,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1321,7 +1354,10 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao:
+                                                              'Novo Itacolomi',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -1344,8 +1380,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1393,7 +1429,9 @@ class _Apucarana_colegios_escolasState
                                                             rioBomEscola[index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Rio Bom',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:
@@ -1416,8 +1454,8 @@ class _Apucarana_colegios_escolasState
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               width: MediaQuery.of(context).size.width > 600
-                                ? MediaQuery.of(context).size.width * 0.7
-                                : MediaQuery.of(context).size.width,
+                                  ? MediaQuery.of(context).size.width * 0.7
+                                  : MediaQuery.of(context).size.width,
                               child: Material(
                                 elevation: 3,
                                 borderRadius:
@@ -1466,7 +1504,9 @@ class _Apucarana_colegios_escolasState
                                                                 index];
                                                         return EscolaCardComponent(
                                                           titulo: escola.nome,
+                                                          regiao: 'Sabáudia',
                                                           link: escola.url,
+                                                          type: true,
                                                         );
                                                       },
                                                       separatorBuilder:

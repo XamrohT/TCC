@@ -125,7 +125,12 @@ flutter:
     - assets/images/formacaopelaescola.png
     - assets/images/formadores200x200px.jpg
     - assets/images/concurso_programacao_agrinho200x200.png
-    - assets/images/cadastro_seed.png            
+    - assets/images/cadastro_seed.png
+    - assets/images/atribuicoes_aulas.png 
+    - assets/images/cas_apucarana.png
+    - assets/images/pertencimento_etnicorracial.jpeg
+    - assets/images/icone_convocacoes_pss.png
+    - assets/images/distribuicao_aulas48.png         
 
   #   - images/a_dot_ham.jpeg
 

@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProcuraCardComponent extends StatefulWidget {
+class AtribuicaoConvocacaoCardComponent extends StatefulWidget {
   late final String titulo;
+  late final String imagePath;
+  late final String route;
   late final String link;
 
-  ProcuraCardComponent({super.key, required this.titulo, required this.link});
+  AtribuicaoConvocacaoCardComponent({
+    super.key,
+    required this.titulo,
+    required this.imagePath,
+    required this.route,
+    required this.link,
+  });
   @override
-  _ProcuraCardComponentState createState() => _ProcuraCardComponentState();
+  _AtribuicaoConvocacaoCardComponentState createState() =>
+      _AtribuicaoConvocacaoCardComponentState();
 }
 
-class _ProcuraCardComponentState extends State<ProcuraCardComponent> {
+class _AtribuicaoConvocacaoCardComponentState
+    extends State<AtribuicaoConvocacaoCardComponent> {
   final Color color = const Color(0x00ff3b30);
   Color secondColor = const Color(0xffaeaeb2);
   Color buttonColor = const Color(0xff1590a6);
@@ -30,9 +40,14 @@ class _ProcuraCardComponentState extends State<ProcuraCardComponent> {
           elevation: 4,
           shadowColor: secondColor,
           color: Colors.white,
-          child: SizedBox(
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(widget.imagePath),
+              ),
+            ),
             height: 50,
-            width: 100,
+            // width: 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -61,6 +76,10 @@ class _ProcuraCardComponentState extends State<ProcuraCardComponent> {
   }
 
   void onClick() {
-    launchUrl(Uri.parse(widget.link));
+    if (widget.link != '') {
+      launchUrl(Uri.parse(widget.link));
+    } else {
+      Navigator.pushNamed(context, widget.route);
+    }
   }
 }

@@ -176,38 +176,43 @@ class _ApucaranaState extends State<Apucarana> {
                 Column(
                   children: [
                     Padding(
-                padding: const EdgeInsets.fromLTRB(4, 24, 0, 8),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadiusGeometry.lerp(
-                        BorderRadius.circular(10),
-                        BorderRadius.circular(10),
-                        5),
-                  ),
-                  width: MediaQuery.of(context).size.width > 600
-                      ? MediaQuery.of(context).size.width * 0.7
-                      : MediaQuery.of(context).size.width,
-                  // height: MediaQuery.of(context).size.height / 10.0,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        AvisosNreComponent(
-                            label: "Institucional",
-                            onTapped: () =>
-                                {snackBar()},
-                            image: 'assets/images/icon_institucional.png'),
-                        AvisosNreComponent(
-                            label: "Avisos",
-                            onTapped: () => {Navigator.pushNamed(context, '/apucarana/apucarana_avisos')},
-                            image: 'assets/images/icon_informativos.png'),
-                        AvisosNreComponent(
-                            label: "Noticias",
-                            onTapped: () => {Navigator.pushNamed(context, '/apucarana/apucarana_noticias')
-                              },
-                            image: 'assets/images/icon_noticias.png'),
-                      ]),
-                ),
-              ),
+                      padding: const EdgeInsets.fromLTRB(4, 24, 0, 8),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadiusGeometry.lerp(
+                              BorderRadius.circular(10),
+                              BorderRadius.circular(10),
+                              5),
+                        ),
+                        width: MediaQuery.of(context).size.width > 600
+                            ? MediaQuery.of(context).size.width * 0.7
+                            : MediaQuery.of(context).size.width,
+                        // height: MediaQuery.of(context).size.height / 10.0,
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AvisosNreComponent(
+                                  label: "Institucional",
+                                  onTapped: () => {snackBar()},
+                                  image:
+                                      'assets/images/icon_institucional.png'),
+                              AvisosNreComponent(
+                                  label: "Avisos",
+                                  onTapped: () => {
+                                        Navigator.pushNamed(context,
+                                            '/apucarana/apucarana_avisos')
+                                      },
+                                  image: 'assets/images/icon_informativos.png'),
+                              AvisosNreComponent(
+                                  label: "Noticias",
+                                  onTapped: () => {
+                                        Navigator.pushNamed(context,
+                                            '/apucarana/apucarana_noticias')
+                                      },
+                                  image: 'assets/images/icon_noticias.png'),
+                            ]),
+                      ),
+                    ),
                   ],
                 ),
                 Column(
@@ -281,10 +286,10 @@ class _ApucaranaState extends State<Apucarana> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(24)),
                                     child: Image.asset(
-                                      
                                         'assets/images/apucarana_fachada.jpg',
-                                        width: MediaQuery.of(context).size.width/1.3,
-                                        
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                1.3,
                                         fit: BoxFit.contain),
                                   ),
                                 ),
@@ -313,11 +318,14 @@ class _ApucaranaState extends State<Apucarana> {
                               //   ),
                               // ),
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(8, 20.0,8,0),
-                                child: Container(
-                                  color: Colors.grey[300],
-                                  child: const Text(
-                                      "Horário de Funcionamento: segunda a sexta das 8h às 12h e das 13h às 18h"),
+                                padding:
+                                    const EdgeInsets.fromLTRB(8, 10.0, 8, 10),
+                                child: Center(
+                                  child: Container(
+                                    color: Colors.grey[300],
+                                    child: const Text(
+                                        "Horário de Funcionamento: segunda a sexta das 8h às 12h e das 13h às 18h"),
+                                  ),
                                 ),
                               ),
                               const Divider(),
@@ -599,7 +607,8 @@ class _ApucaranaState extends State<Apucarana> {
         height: 20,
         width: MediaQuery.of(context).size.width,
         child: Center(
-            child: const Text('Você já está localizado na página Institucional.')),
+            child:
+                const Text('Você já está localizado na página Institucional.')),
       ),
     );
 

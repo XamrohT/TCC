@@ -3,9 +3,16 @@ import 'package:url_launcher/url_launcher.dart';
 
 class EscolaCardComponent extends StatefulWidget {
   late final String titulo;
+  late final String regiao;
   late final String link;
+  late final bool type;
 
-  EscolaCardComponent({super.key, required this.titulo, required this.link});
+  EscolaCardComponent(
+      {super.key,
+      required this.titulo,
+      required this.regiao,
+      required this.link,
+      required this.type});
   @override
   _EscolaCardComponentState createState() => _EscolaCardComponentState();
 }
@@ -26,9 +33,7 @@ class _EscolaCardComponentState extends State<EscolaCardComponent> {
         onTap: () => onClick(),
         child: Material(
           borderRadius: BorderRadiusGeometry.lerp(
-                            BorderRadius.circular(10),
-                            BorderRadius.circular(10),
-                            5),
+              BorderRadius.circular(10), BorderRadius.circular(10), 5),
           elevation: 4,
           shadowColor: secondColor,
           color: Colors.white,
@@ -37,7 +42,7 @@ class _EscolaCardComponentState extends State<EscolaCardComponent> {
               widget.titulo,
               // ignore: prefer_const_constructors
               style: TextStyle(
-                fontSize:MediaQuery.of(context).size.height * 0.016,
+                fontSize: MediaQuery.of(context).size.height * 0.016,
               ),
             ),
             subtitle: Padding(
@@ -45,7 +50,7 @@ class _EscolaCardComponentState extends State<EscolaCardComponent> {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left:8.0),
+                    padding: const EdgeInsets.only(left: 8.0),
                     child: Container(
                       decoration: const BoxDecoration(
                         color: Colors.purple,
@@ -55,7 +60,7 @@ class _EscolaCardComponentState extends State<EscolaCardComponent> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 1.9),
-                        child: Text('NRE Apucarana',
+                        child: Text(widget.regiao,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 12,
@@ -73,7 +78,11 @@ class _EscolaCardComponentState extends State<EscolaCardComponent> {
   }
 
   void onClick() {
-    launchUrl(
-        Uri.parse("${widget.link}"));
+    if (widget.type == true) {
+      launchUrl(Uri.parse("${widget.link}"));
+    } else {
+      launchUrl(
+          mode: LaunchMode.externalApplication, Uri.parse("${widget.link}"));
+    }
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'atribuicoes_e_concovacoes_pop_up.dart';
+
 class EndDrawer extends StatefulWidget {
   const EndDrawer(
       this.page1,
@@ -228,6 +230,22 @@ class _EndDrawerState extends State<EndDrawer> {
             title: const Text('Telefones'),
             onTap: () {
               Navigator.pushNamed(context, widget.page17);
+            },
+          ),
+          Divider(
+            color: Colors.black,
+            indent: 20,
+            endIndent: 10,
+          ),
+          ListTile(
+            title: const Text('Convocações e atribuições'),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AtribuicoesConcocacoesCustomPopUp();
+                },
+              );
             },
           ),
         ],
