@@ -26,7 +26,7 @@ class _ApucaranaState extends State<Apucarana> {
                 Column(
                   children: [
                     Material(
-                      elevation: 4,
+                      elevation: 10,
                       child: SizedBox(
                         height: MediaQuery.of(context).size.height / 9,
                         child: Row(
@@ -220,7 +220,7 @@ class _ApucaranaState extends State<Apucarana> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10.0, 12, 8, 0),
                       child: Material(
-                        elevation: 5,
+                        elevation: 10,
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(40.0),
                           topRight: Radius.circular(40.0),
@@ -238,7 +238,11 @@ class _ApucaranaState extends State<Apucarana> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: const [
-                                    Text("INSTITUCIONAL"),
+                                    Text(
+                                      "INSTITUCIONAL",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ],
                                 ),
                               ),
