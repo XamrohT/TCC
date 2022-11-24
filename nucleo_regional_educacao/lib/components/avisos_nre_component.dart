@@ -8,7 +8,12 @@ class AvisosNreComponent extends StatelessWidget {
   final String? image;
 
   const AvisosNreComponent(
-      {super.key, this.onTapped, this.label, this.icon, this.importedIcon, this.image});
+      {super.key,
+      this.onTapped,
+      this.label,
+      this.icon,
+      this.importedIcon,
+      this.image});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,7 +33,7 @@ class AvisosNreComponent extends StatelessWidget {
             child: Container(
               height: MediaQuery.of(context).size.height * 0.185,
               width: MediaQuery.of(context).size.width > 600
-                  ? MediaQuery.of(context).size.width * 0.10
+                  ? MediaQuery.of(context).size.width * 0.15
                   : MediaQuery.of(context).size.width * 0.27,
               // ignore: prefer_const_constructors
               decoration: BoxDecoration(
@@ -46,9 +51,8 @@ class AvisosNreComponent extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.zero,
-                            child: Image.asset('$image')
-                          ),
+                              padding: EdgeInsets.zero,
+                              child: Image.asset('$image')),
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
                             child: Center(

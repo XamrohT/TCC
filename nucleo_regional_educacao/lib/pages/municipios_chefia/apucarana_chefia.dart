@@ -103,7 +103,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                       child: Container(
                         decoration: const BoxDecoration(),
                         width: MediaQuery.of(context).size.width > 600
-                            ? MediaQuery.of(context).size.width * 0.5
+                            ? MediaQuery.of(context).size.width * 0.7
                             : MediaQuery.of(context).size.width,
                         // height: MediaQuery.of(context).size.height / 6.0,
                         child: Column(
@@ -115,7 +115,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                 style: TextStyle(
                                     fontSize:
                                         MediaQuery.of(context).size.height *
-                                            0.02),
+                                            0.018),
                               ),
                             ),
                             Padding(
@@ -229,7 +229,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                     child: SingleChildScrollView(
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width > 600
-                            ? MediaQuery.of(context).size.width * 0.5
+                            ? MediaQuery.of(context).size.width * 0.65
                             : MediaQuery.of(context).size.width,
                         //height: MediaQuery.of(context).size.height,
                         child: Column(
@@ -243,13 +243,12 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Center(
-                                      child: Text("CHEFIA",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.02)),
+                                      child: Text(
+                                        "CHEFIA",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -280,8 +279,8 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                               fontWeight: FontWeight.bold,
                                               fontSize: MediaQuery.of(context)
                                                       .size
-                                                      .height *
-                                                  0.02),
+                                                      .width *
+                                                  0.030),
                                         ),
                                       ),
                                     ),
@@ -292,8 +291,8 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                                         style: TextStyle(
                                             fontSize: MediaQuery.of(context)
                                                     .size
-                                                    .height *
-                                                0.02),
+                                                    .width *
+                                                0.025),
                                       ),
                                     ),
                                   ],

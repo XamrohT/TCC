@@ -85,7 +85,7 @@ class _ApucaranaState extends State<Apucarana> {
                         elevation: 10,
                         child: Container(
                           decoration: const BoxDecoration(),
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width * 0.5
                               : MediaQuery.of(context).size.width,
                           // height: MediaQuery.of(context).size.height / 6.0,
