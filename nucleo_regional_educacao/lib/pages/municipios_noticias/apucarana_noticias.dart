@@ -125,7 +125,7 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
                         BorderRadius.circular(10),
                         5),
                   ),
-                  width: MediaQuery.of(context).size.width > 600
+                  width: MediaQuery.of(context).size.width > 850
                       ? MediaQuery.of(context).size.width * 0.7
                       : MediaQuery.of(context).size.width,
                   // height: MediaQuery.of(context).size.height / 10.0,
@@ -139,7 +139,10 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
                             image: 'assets/images/icon_institucional.png'),
                         AvisosNreComponent(
                             label: "Avisos",
-                            onTapped: () => {Navigator.pushNamed(context, '/apucarana/apucarana_avisos')},
+                            onTapped: () => {
+                                  Navigator.pushNamed(
+                                      context, '/apucarana/apucarana_avisos')
+                                },
                             image: 'assets/images/icon_informativos.png'),
                         AvisosNreComponent(
                             label: "Noticias",
@@ -172,7 +175,7 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
                         children: [
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.60,
-                            width: MediaQuery.of(context).size.width > 600
+                            width: MediaQuery.of(context).size.width > 850
                                 ? MediaQuery.of(context).size.width * 0.7
                                 : MediaQuery.of(context).size.width,
                             child: ListView.separated(
@@ -200,7 +203,7 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
                     child: Material(
                       color: Colors.grey[200],
                       child: Container(
-                        child: MediaQuery.of(context).size.width > 600
+                        child: MediaQuery.of(context).size.width > 850
                             ? Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -437,17 +440,14 @@ class _Apucarana_noticiasState extends State<Apucarana_noticias> {
     }).toList();
 
     setState(() {
-      
       concursosDisponiveis = suggestions;
     });
     if (query == "") {
-        for (int i = 0; i < elementsTitle.length; i++) {
-          concursosDisponiveis.add(
-              Concurso(elementsTitle[i], elementsDate[i], elementsLink[i]));
-        }
+      for (int i = 0; i < elementsTitle.length; i++) {
+        concursosDisponiveis
+            .add(Concurso(elementsTitle[i], elementsDate[i], elementsLink[i]));
       }
-    setState(() {
-      
-    });
+    }
+    setState(() {});
   }
 }

@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.grey[200],
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           height: MediaQuery.of(context).size.height / 2.2,
@@ -116,9 +116,9 @@ class _HomePageState extends State<HomePage> {
                       Divider(
                         color: Colors.black,
                         indent:
-                            MediaQuery.of(context).size.width > 600 ? 240 : 20,
+                            MediaQuery.of(context).size.width > 850 ? 240 : 20,
                         endIndent:
-                            MediaQuery.of(context).size.width > 600 ? 240 : 20,
+                            MediaQuery.of(context).size.width > 850 ? 240 : 20,
                       ),
                     ],
                   ),
@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.fromLTRB(18.0, 8, 8, 0),
                       child: SizedBox(
                           height: 30,
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Text("Ultimas Notícias:")),
@@ -139,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Padding(
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Padding(
@@ -173,10 +173,10 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          height: MediaQuery.of(context).size.width > 600
+                          height: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.height * 0.1
                               : MediaQuery.of(context).size.height * 0.18,
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Column(
@@ -244,7 +244,9 @@ class _HomePageState extends State<HomePage> {
                                                             FontWeight.bold),
                                                   ),
                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Text("1º Lugar -"),
                                                       TextButton(
@@ -263,10 +265,14 @@ class _HomePageState extends State<HomePage> {
                                                       ),
                                                     ],
                                                   ),
-                                                  Text("Professora: Sandra Marcia Bonilha Pilla - CE Ulysses Guimarães - Roncador"),
-                                                  Text("Diretor: Cleber Fabrício"),
+                                                  Text(
+                                                      "Professora: Sandra Marcia Bonilha Pilla - CE Ulysses Guimarães - Roncador"),
+                                                  Text(
+                                                      "Diretor: Cleber Fabrício"),
                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Text("2º Lugar -"),
                                                       TextButton(
@@ -285,10 +291,14 @@ class _HomePageState extends State<HomePage> {
                                                       ),
                                                     ],
                                                   ),
-                                                  Text("Professora: Maria Claudia Ramos - CCM Darcy José Costa - Campo Mourão"),
-                                                  Text("Diretor: Renato Correa"),
-                                                   Row(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                  Text(
+                                                      "Professora: Maria Claudia Ramos - CCM Darcy José Costa - Campo Mourão"),
+                                                  Text(
+                                                      "Diretor: Renato Correa"),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     children: [
                                                       Text("3º Lugar -"),
                                                       TextButton(
@@ -307,8 +317,10 @@ class _HomePageState extends State<HomePage> {
                                                       ),
                                                     ],
                                                   ),
-                                                  Text("Professora Marilda Costa de Godoy - CE Altamira do Paraná"),
-                                                  Text("Diretora: Lilian Atamantchuk Albuquerque"),
+                                                  Text(
+                                                      "Professora Marilda Costa de Godoy - CE Altamira do Paraná"),
+                                                  Text(
+                                                      "Diretora: Lilian Atamantchuk Albuquerque"),
                                                 ],
                                               ),
                                             ),
@@ -331,7 +343,7 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Padding(
@@ -348,7 +360,7 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Padding(
@@ -365,10 +377,10 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          height: MediaQuery.of(context).size.width > 600
+                          height: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.height * 0.1
                               : MediaQuery.of(context).size.height * 0.18,
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Column(
@@ -512,7 +524,7 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Padding(
@@ -529,7 +541,7 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Padding(
@@ -547,10 +559,10 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(18.0, 0, 8, 0),
                         child: SizedBox(
-                          height: MediaQuery.of(context).size.width > 600
+                          height: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.height * 0.1
                               : MediaQuery.of(context).size.height * 0.18,
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width / 1.7
                               : MediaQuery.of(context).size.width / 1.1,
                           child: Column(
@@ -674,7 +686,7 @@ class _HomePageState extends State<HomePage> {
                         child: Material(
                           color: Colors.grey[200],
                           child: Container(
-                            child: MediaQuery.of(context).size.width > 600
+                            child: MediaQuery.of(context).size.width > 850
                                 ? Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [

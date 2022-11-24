@@ -60,7 +60,7 @@ class _AtribuicaoConvocacaoCardComponentState
                         widget.titulo,
                         // ignore: prefer_const_constructors
                         style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width > 600
+                          fontSize: MediaQuery.of(context).size.width > 850
                               ? 20
                               : MediaQuery.of(context).size.height * 0.016,
                         ),

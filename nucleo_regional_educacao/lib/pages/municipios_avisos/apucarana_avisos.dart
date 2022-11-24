@@ -26,7 +26,6 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
 
     if (await webScraper
         .loadWebPage('/modules/qas/categoria.php?cod_categoria=3')) {
-  
       search = webScraper.getElement(
           'div.blockContent > table > tbody > tr > td > a', ['href']);
       for (int i = 1; i <= search!.length - 1; i += 2) {
@@ -98,7 +97,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                         BorderRadius.circular(10),
                         5),
                   ),
-                  width: MediaQuery.of(context).size.width > 600
+                  width: MediaQuery.of(context).size.width > 850
                       ? MediaQuery.of(context).size.width * 0.7
                       : MediaQuery.of(context).size.width,
                   // height: MediaQuery.of(context).size.height / 10.0,
@@ -134,7 +133,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                         children: [
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.60,
-                            width: MediaQuery.of(context).size.width > 600
+                            width: MediaQuery.of(context).size.width > 850
                                 ? MediaQuery.of(context).size.width * 0.7
                                 : MediaQuery.of(context).size.width,
                             child: ListView.separated(
@@ -161,7 +160,7 @@ class _Apucarana_avisosState extends State<Apucarana_avisos> {
                     child: Material(
                       color: Colors.grey[200],
                       child: Container(
-                        child: MediaQuery.of(context).size.width > 600
+                        child: MediaQuery.of(context).size.width > 850
                             ? Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

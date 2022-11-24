@@ -32,7 +32,7 @@ class AvisosNreComponent extends StatelessWidget {
             elevation: 10,
             child: Container(
               height: MediaQuery.of(context).size.height * 0.185,
-              width: MediaQuery.of(context).size.width > 600
+              width: MediaQuery.of(context).size.width > 850
                   ? MediaQuery.of(context).size.width * 0.15
                   : MediaQuery.of(context).size.width * 0.27,
               // ignore: prefer_const_constructors

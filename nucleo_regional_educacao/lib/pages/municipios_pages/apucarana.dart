@@ -184,7 +184,7 @@ class _ApucaranaState extends State<Apucarana> {
                               BorderRadius.circular(10),
                               5),
                         ),
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.7
                             : MediaQuery.of(context).size.width,
                         // height: MediaQuery.of(context).size.height / 10.0,
@@ -226,7 +226,7 @@ class _ApucaranaState extends State<Apucarana> {
                           topRight: Radius.circular(40.0),
                         ),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width > 600
+                          width: MediaQuery.of(context).size.width > 850
                               ? MediaQuery.of(context).size.width * 0.5
                               : MediaQuery.of(context).size.width,
                           child: Column(

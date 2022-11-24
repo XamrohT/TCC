@@ -107,7 +107,7 @@ class _Apucarana_convocacao_pssState extends State<Apucarana_convocacao_pss> {
                       elevation: 10,
                       child: Container(
                         decoration: const BoxDecoration(),
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         // height: MediaQuery.of(context).size.height / 6.0,
@@ -195,7 +195,7 @@ class _Apucarana_convocacao_pssState extends State<Apucarana_convocacao_pss> {
                             BorderRadius.circular(10),
                             5),
                       ),
-                      width: MediaQuery.of(context).size.width > 600
+                      width: MediaQuery.of(context).size.width > 850
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
                       // height: MediaQuery.of(context).size.height / 10.0,
@@ -233,7 +233,7 @@ class _Apucarana_convocacao_pssState extends State<Apucarana_convocacao_pss> {
                     ),
                     child: SingleChildScrollView(
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         child: Column(
@@ -276,7 +276,7 @@ class _Apucarana_convocacao_pssState extends State<Apucarana_convocacao_pss> {
                                       BorderRadius.circular(10),
                                       5),
                                 ),
-                                width: MediaQuery.of(context).size.width > 600
+                                width: MediaQuery.of(context).size.width > 850
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
                                 // height:
@@ -351,7 +351,7 @@ class _Apucarana_convocacao_pssState extends State<Apucarana_convocacao_pss> {
                   Material(
                     color: Colors.grey[200],
                     child: Container(
-                      child: MediaQuery.of(context).size.width > 600
+                      child: MediaQuery.of(context).size.width > 850
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

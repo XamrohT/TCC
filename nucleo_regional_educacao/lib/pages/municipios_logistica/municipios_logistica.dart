@@ -102,7 +102,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                       elevation: 10,
                       child: Container(
                         decoration: const BoxDecoration(),
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         // height: MediaQuery.of(context).size.height / 6.0,
@@ -118,7 +118,6 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                                             0.02),
                               ),
                             ),
-                            
                             Padding(
                               padding: const EdgeInsets.fromLTRB(4, 8, 10, 0),
                               child: Row(
@@ -191,7 +190,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                             BorderRadius.circular(10),
                             5),
                       ),
-                      width: MediaQuery.of(context).size.width > 600
+                      width: MediaQuery.of(context).size.width > 850
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
                       // height: MediaQuery.of(context).size.height / 10.0,
@@ -205,13 +204,17 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
-                              onTapped: () => {Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_avisos')},
+                              onTapped: () => {
+                                    Navigator.pushNamed(
+                                        context, '/apucarana/apucarana_avisos')
+                                  },
                               image: 'assets/images/icon_informativos.png'),
                           AvisosNreComponent(
                               label: "Noticias",
-                              onTapped: () => {Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_noticias')},
+                              onTapped: () => {
+                                    Navigator.pushNamed(context,
+                                        '/apucarana/apucarana_noticias')
+                                  },
                               image: 'assets/images/icon_noticias.png'),
                         ],
                       ),
@@ -226,7 +229,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                     child: SingleChildScrollView(
                       child: SizedBox(
                         // height: MediaQuery.of(context).size.height/1.4,
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         child: Column(
@@ -244,14 +247,12 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                                                 0.02)),
                               ),
                             ),
-                            
                             const Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text('Missão/Sobre',
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             ),
-                            
                             const Expanded(
                               flex: 0,
                               child: Padding(
@@ -414,7 +415,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                                       BorderRadius.circular(10),
                                       5),
                                 ),
-                                width: MediaQuery.of(context).size.width > 600
+                                width: MediaQuery.of(context).size.width > 850
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
                                 // height:
@@ -459,7 +460,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                                       BorderRadius.circular(10),
                                       5),
                                 ),
-                                width: MediaQuery.of(context).size.width > 600
+                                width: MediaQuery.of(context).size.width > 850
                                     ? MediaQuery.of(context).size.width * 0.7
                                     : MediaQuery.of(context).size.width,
                                 // height:
@@ -503,7 +504,7 @@ class _Apucarana_logisticaState extends State<Apucarana_logistica> {
                   Material(
                     color: Colors.grey[200],
                     child: Container(
-                      child: MediaQuery.of(context).size.width > 600
+                      child: MediaQuery.of(context).size.width > 850
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

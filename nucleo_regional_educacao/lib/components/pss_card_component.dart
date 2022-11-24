@@ -118,7 +118,7 @@ class _PSSCardComponentState extends State<PSSCardComponent> {
           });
     }
 
-    if(widget.titulo == 'Professores'){
+    if (widget.titulo == 'Professores') {
       if (await webScraper.loadWebPage(widget.link1)) {
         search = webScraper.getElement(
             '#content > div.docum_window > div > div.docum_size80 > div > div.docum_filelist > div > div.docum_filebase > div.docum_filebase_l > a)',
@@ -146,7 +146,7 @@ class _PSSCardComponentState extends State<PSSCardComponent> {
                 ),
                 content: SizedBox(
                   height: 300,
-                  width: MediaQuery.of(context).size.width > 600
+                  width: MediaQuery.of(context).size.width > 850
                       ? MediaQuery.of(context).size.width * 0.5
                       : MediaQuery.of(context).size.width,
                   child: Column(
@@ -174,8 +174,7 @@ class _PSSCardComponentState extends State<PSSCardComponent> {
               );
             });
       }
-    }    
-    else if (widget.titulo == 'Assistente Administrativo') {
+    } else if (widget.titulo == 'Assistente Administrativo') {
       if (await webScraper.loadWebPage(widget.link2)) {
         search = webScraper.getElement(
             '#content > div.docum_window > div > div.docum_size80 > div > div.docum_filelist > div > div.docum_filebase > div.docum_filebase_l > a)',
@@ -203,7 +202,7 @@ class _PSSCardComponentState extends State<PSSCardComponent> {
                 ),
                 content: SizedBox(
                   height: 300,
-                  width: MediaQuery.of(context).size.width > 600
+                  width: MediaQuery.of(context).size.width > 850
                       ? MediaQuery.of(context).size.width * 0.5
                       : MediaQuery.of(context).size.width,
                   child: Column(
@@ -256,7 +255,7 @@ class _PSSCardComponentState extends State<PSSCardComponent> {
                 ),
                 content: SizedBox(
                   height: 300,
-                  width: MediaQuery.of(context).size.width > 600
+                  width: MediaQuery.of(context).size.width > 850
                       ? MediaQuery.of(context).size.width * 0.5
                       : MediaQuery.of(context).size.width,
                   child: Column(

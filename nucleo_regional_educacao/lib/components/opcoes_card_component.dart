@@ -143,7 +143,7 @@ class _OpcoesCardComponentState extends State<OpcoesCardComponent> {
                 ),
                 content: SizedBox(
                   height: 300,
-                  width: MediaQuery.of(context).size.width > 600
+                  width: MediaQuery.of(context).size.width > 850
                       ? MediaQuery.of(context).size.width * 0.5
                       : MediaQuery.of(context).size.width,
                   child: Column(
@@ -196,7 +196,7 @@ class _OpcoesCardComponentState extends State<OpcoesCardComponent> {
                 ),
                 content: SizedBox(
                   height: 300,
-                  width: MediaQuery.of(context).size.width > 600
+                  width: MediaQuery.of(context).size.width > 850
                       ? MediaQuery.of(context).size.width * 0.5
                       : MediaQuery.of(context).size.width,
                   child: Column(

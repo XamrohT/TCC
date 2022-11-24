@@ -33,7 +33,7 @@ class _CustomPopUpState extends State<CustomPopUp> {
         style: TextStyle(fontSize: 24.0),
       ),
       content: SizedBox(
-        width: MediaQuery.of(context).size.width > 600
+        width: MediaQuery.of(context).size.width > 850
             ? MediaQuery.of(context).size.width * 0.7
             : MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
@@ -45,7 +45,7 @@ class _CustomPopUpState extends State<CustomPopUp> {
               shrinkWrap: true,
               itemCount: 20,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: MediaQuery.of(context).size.width > 600 ? 5 : 3,
+                crossAxisCount: MediaQuery.of(context).size.width > 850 ? 5 : 3,
               ),
               itemBuilder: (BuildContext context, int index) {
                 return ProcuraCardComponent(

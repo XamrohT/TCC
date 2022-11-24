@@ -16,7 +16,6 @@ class _GridImagePopUpState extends State<GridImagePopUp> {
 
   @override
   Widget build(BuildContext context) {
-  
     String selectedMenu = '';
     return AlertDialog(
       shape: const RoundedRectangleBorder(
@@ -35,7 +34,7 @@ class _GridImagePopUpState extends State<GridImagePopUp> {
       ),
       content: SizedBox(
         height: 400,
-        width: MediaQuery.of(context).size.width > 600
+        width: MediaQuery.of(context).size.width > 850
             ? MediaQuery.of(context).size.width * 0.7
             : MediaQuery.of(context).size.width,
         child: SingleChildScrollView(

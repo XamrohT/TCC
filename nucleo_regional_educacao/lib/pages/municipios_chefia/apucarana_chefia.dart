@@ -102,7 +102,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                       elevation: 10,
                       child: Container(
                         decoration: const BoxDecoration(),
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.7
                             : MediaQuery.of(context).size.width,
                         // height: MediaQuery.of(context).size.height / 6.0,
@@ -190,7 +190,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                             BorderRadius.circular(10),
                             5),
                       ),
-                      width: MediaQuery.of(context).size.width > 600
+                      width: MediaQuery.of(context).size.width > 850
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
                       // height: MediaQuery.of(context).size.height / 10.0,
@@ -228,7 +228,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                     ),
                     child: SingleChildScrollView(
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.65
                             : MediaQuery.of(context).size.width,
                         //height: MediaQuery.of(context).size.height,
@@ -369,7 +369,7 @@ class _Apucarana_chefiaState extends State<Apucarana_chefia> {
                   Material(
                     color: Colors.grey[200],
                     child: Container(
-                      child: MediaQuery.of(context).size.width > 600
+                      child: MediaQuery.of(context).size.width > 850
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

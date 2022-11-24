@@ -104,7 +104,7 @@ class _Apucarana_convocacao_pessoas_negrasState
                       elevation: 10,
                       child: Container(
                         decoration: const BoxDecoration(),
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         // height: MediaQuery.of(context).size.height / 6.0,
@@ -192,7 +192,7 @@ class _Apucarana_convocacao_pessoas_negrasState
                             BorderRadius.circular(10),
                             5),
                       ),
-                      width: MediaQuery.of(context).size.width > 600
+                      width: MediaQuery.of(context).size.width > 850
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
                       // height: MediaQuery.of(context).size.height / 10.0,
@@ -230,7 +230,7 @@ class _Apucarana_convocacao_pessoas_negrasState
                     ),
                     child: SingleChildScrollView(
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         child: Column(
@@ -419,7 +419,7 @@ class _Apucarana_convocacao_pessoas_negrasState
                   Material(
                     color: Colors.grey[200],
                     child: Container(
-                      child: MediaQuery.of(context).size.width > 600
+                      child: MediaQuery.of(context).size.width > 850
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

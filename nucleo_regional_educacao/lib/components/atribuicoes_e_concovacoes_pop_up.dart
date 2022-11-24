@@ -52,7 +52,7 @@ class _AtribuicoesConcocacoesCustomPopUpState
         style: TextStyle(fontSize: 24.0),
       ),
       content: SizedBox(
-        width: MediaQuery.of(context).size.width > 600
+        width: MediaQuery.of(context).size.width > 850
             ? MediaQuery.of(context).size.width * 0.7
             : MediaQuery.of(context).size.width,
         child: SingleChildScrollView(

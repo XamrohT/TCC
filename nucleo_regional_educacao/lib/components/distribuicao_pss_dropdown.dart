@@ -205,7 +205,7 @@ class _Distribuicao_pss_dropdownState extends State<Distribuicao_pss_dropdown> {
             ),
             content: SizedBox(
               height: 300,
-              width: MediaQuery.of(context).size.width > 600
+              width: MediaQuery.of(context).size.width > 850
                   ? MediaQuery.of(context).size.width * 0.5
                   : MediaQuery.of(context).size.width,
               child: Column(

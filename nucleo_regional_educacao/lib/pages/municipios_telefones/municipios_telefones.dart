@@ -102,7 +102,7 @@ class _Apucarana_telefonesState extends State<Apucarana_telefones> {
                       elevation: 10,
                       child: Container(
                         decoration: const BoxDecoration(),
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         // height: MediaQuery.of(context).size.height / 6.0,
@@ -190,7 +190,7 @@ class _Apucarana_telefonesState extends State<Apucarana_telefones> {
                             BorderRadius.circular(10),
                             5),
                       ),
-                      width: MediaQuery.of(context).size.width > 600
+                      width: MediaQuery.of(context).size.width > 850
                           ? MediaQuery.of(context).size.width * 0.7
                           : MediaQuery.of(context).size.width,
                       // height: MediaQuery.of(context).size.height / 10.0,
@@ -204,13 +204,17 @@ class _Apucarana_telefonesState extends State<Apucarana_telefones> {
                               image: 'assets/images/icon_institucional.png'),
                           AvisosNreComponent(
                               label: "Avisos",
-                              onTapped: () => {Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_avisos')},
+                              onTapped: () => {
+                                    Navigator.pushNamed(
+                                        context, '/apucarana/apucarana_avisos')
+                                  },
                               image: 'assets/images/icon_informativos.png'),
                           AvisosNreComponent(
                               label: "Noticias",
-                              onTapped: () => {Navigator.pushNamed(context,
-                                              '/apucarana/apucarana_noticias')},
+                              onTapped: () => {
+                                    Navigator.pushNamed(context,
+                                        '/apucarana/apucarana_noticias')
+                                  },
                               image: 'assets/images/icon_noticias.png'),
                         ],
                       ),
@@ -225,7 +229,7 @@ class _Apucarana_telefonesState extends State<Apucarana_telefones> {
                     child: SingleChildScrollView(
                       child: SizedBox(
                         // height: MediaQuery.of(context).size.height/1.4,
-                        width: MediaQuery.of(context).size.width > 600
+                        width: MediaQuery.of(context).size.width > 850
                             ? MediaQuery.of(context).size.width * 0.5
                             : MediaQuery.of(context).size.width,
                         child: Column(
@@ -568,7 +572,7 @@ class _Apucarana_telefonesState extends State<Apucarana_telefones> {
                   Material(
                     color: Colors.grey[200],
                     child: Container(
-                      child: MediaQuery.of(context).size.width > 600
+                      child: MediaQuery.of(context).size.width > 850
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
